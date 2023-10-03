@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1168479-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1168479-8');
+    </script>
+    <style>
+            a {
+                color: #1772d0;
+                text-decoration:none;
+            }
+            a:focus, a:hover {
+                color: #f09228;
+                text-decoration:none;
+            }
+
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: Helvetica, Helvetica, sans-serif;
+        <!-- background-color: #333;
+        color: white-->}
+      p {line-height: 26px;}
+      main.container {max-width: 960px;}
+      span.p-title {font-size: 16px;}
+      span.p-authors {font-style: normal;font-size: 16px;}
+      span.p-conference {font-style: italic;;font-size: 16px;}
+      .p-bibtex {font-size: 12px; margin-bottom: 0px; max-width: 650px; text-align: left;}
+      img.p-teaser {width: 200px;}
+      img.profile {
+        width: 160px;
+        height: 160px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);
+      }
+    </style>
+
+    <title>Xin Yao</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="mt-5 mb-5 text-center">
+          <div class="text-center text-sm-center">
+            <h2>Regression on Parkinsons Telemonitoring dataset</h2>
+        
+	    <br>
+          </div>
+      </div>
+
+      <h4 class="mb-3 text-center text-sm-left">Introduction</h4>
+
+    <p>
+        Parkinson's disease is a progressive nervous system disorder affecting movement, often starting with subtle tremors in one hand. This study analyzes the Parkinson's Telemonitoring dataset, predicting total UPDRS scores. It includes biomedical voice data from 42 early-stage Parkinson's patients using a remote monitoring device over six months. The dataset is complete, containing subject info, time intervals, UPDRS scores, and 16 voice measures. Each row is a voice recording. The data is in ASCII CSV format. The "test time" feature indicates when measurements were taken. Total and motor UPDRS scores were measured daily, while other features were measured multiple times. This paper focuses on predicting total UPDRS using other features to reduce costs. The study uses linear least-squares, ridge regression, Adam optimizer, and conjugate gradient methods, with weight plots, error analysis, and comparisons between these algorithms as the main contributions.
+    </p>
+
+    <h4 class="mb-3 text-center text-sm-left">Pre-processing</h4>
+    <p>
+      Firstly we visualize the covariance matrix of all the features, as is shown in Figure 1. We can see that it is symmetric and the diagonal elements are much larger than other elements. Since we would like to give a result without knowing which one the patient is and when the test time is, we drop the unwanted features ’subject#’ and ’test_time’ from the data. We also randomly shuffle the rows of the original data to avoid the fact that the training dataset only contains the first parts of the patients. We split the first 50% of the shuffled data as a training set, the subsequent 25% as the validation set, and the remaining 25% as the test set. Meanwhile, in order to avoid numerical problems, data normalization is performed so that each feature has mean zero and variance 1. The mean and standard deviation of the training dataset are evaluated to normalize the three data frames.     
+    </p>    
+    <div class="text-center">
+      <img src="Fig1.png" class="mr-15 p-teaser mb-sm-5" style="width: 40%;" />
+    </div>
+
+    <h4 class="mb-3 text-center text-sm-left">Experiment results on different methods</h4>
+    <div class="text-center">
+      <img src="Fig2.png" class="mr-15 p-teaser mb-sm-5" style="width: 100%;" />
+      <img src="Fig3.png" class="mr-15 p-teaser mb-sm-5" style="width: 80%;" />
+    </div>
+    <div class="text-center">
+      <img src="Fig4.png" class="mr-15 p-teaser mb-sm-5" style="width: 100%;" />
+    </div>
+    <div class="text-center">
+      <img src="Fig5.png" class="mr-15 p-teaser mb-sm-5" style="width: 100%;" />
+    </div>
+    <div class="text-center">
+      <img src="Fig6.png" class="mr-15 p-teaser mb-sm-5" style="width: 100%;" />
+    </div>
+
+    
+    <h4 class="mb-3 text-center text-sm-left">Conclusion</h4>
+    <p>
+      From Figure 2 4 5 6 and Table 1 we can compare the results of the above four algorithms intuitively. Although LLS regression has the smallest mean squared error on the training set, it performs worse than ridge regression and conjugate gradient due to overfitting. Ridge regression achieved a small- est mean squared error with 11.220. The coefficients of determination R2 of LLS regression, ridge regression, and conjugate gradient methods on the test set are all 0.903, which means that 90.3% of the test data could be explained by respective algorithms, while the R2 of Adam optimizer is 0.901.    
+    </p> 
+    <p>
+      In our experiment, the Adam optimizer has a maximum mean squared error and has many more iterative steps than conjugate gradient methods. This is because it is tricky to tune so many hyperparameters in the Adam optimizer compared with other algorithms.    
+    </p> 
+    <div class="text-center">
+      <img src="Tab1.png" class="mr-15 p-teaser mb-sm-5" style="width: 80%;" />
+    </div>
+
+
+
+
+    </main>
+
+
+
+
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=8SiDNmnmRKXoaSgkZe-3u8muBOFpY6OlPJDaTGWYLAs&cl=ffffff&w=250"></script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

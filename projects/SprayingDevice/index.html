@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1168479-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1168479-8');
+    </script>
+    <style>
+            a {
+                color: #1772d0;
+                text-decoration:none;
+            }
+            a:focus, a:hover {
+                color: #f09228;
+                text-decoration:none;
+            }
+
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: Helvetica, Helvetica, sans-serif;
+        <!-- background-color: #333;
+        color: white-->}
+      p {line-height: 26px;}
+      main.container {max-width: 960px;}
+      span.p-title {font-size: 16px;}
+      span.p-authors {font-style: normal;font-size: 16px;}
+      span.p-conference {font-style: italic;;font-size: 16px;}
+      .p-bibtex {font-size: 12px; margin-bottom: 0px; max-width: 650px; text-align: left;}
+      img.p-teaser {width: 200px;}
+      img.profile {
+        width: 160px;
+        height: 160px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);
+      }
+    </style>
+
+    <title>Xin Yao</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="mt-5 mb-5 text-center">
+          <div class="text-center text-sm-center">
+            <h2>The design of a small intelligent spraying device for wall surface </h2>
+        
+	    <br>
+          </div>
+      </div>
+
+      <h4 class="mb-3 text-center text-sm-left">Introduction</h4>
+
+    <p>
+      With the development of wall-spraying equipment, the traditional high-height spraying method shows a number of limitations, such as the hazard of working at a high altitude, the inconvenience of the heavy wall-spraying equipment, and the low degree of automation and other issues which are hard to solve. The paper introduces a new pattern of wall-spraying equipment with double suction cups which set the minimum system of MC9SXS128 as the control center. The mechanical structure is a crawler type of minicar. The moving direction of the device is achieved through the attachment of two vacuum suction cups and the rotation of two master-slave wheels. The software is programmed by Codewarrior, and the control code is generated automatically. The user can plan the route and let the device work voluntarily or can connect the Bluetooth with their mobile phone and send instruments through the connection to realize the spraying process on a smooth wall. The experimental result shows that the device can not only reduce the risk of artificial spraying but also can be applied adaptable in a wide range of situations with the features of safe, efficient, innovative, and lightweight. The experimental results show that the proposed scheme can avoid the risk of artificial spraying and a high degree of automation. It has the characteristics of safety, efficiency, innovation, lightness, and low cost.
+    </p>
+    <div class="text-center">
+      <img src="item1.png" class="mr-15 p-teaser mb-sm-5" style="width: 35%;" />
+      <img src="item2.png" class="mr-15 p-teaser mb-sm-5" style="width: 35%;" />
+    </div>
+  
+    <h4 class="mb-3 text-center text-sm-left">Hardware structure and working principle of the control system</h4>
+    <p>
+      The hardware block diagram of our intelligent small wall-spraying device, depicted in the figure, consists of several key components. The primary elements include the MC9SX128 chip, power module, motor drive module, spray drive module, Bluetooth module, display module, and button module.    </p>
+    <p>
+      The motor drive module is responsible for controlling the reduction motor of the dust removal device, the vacuum pump of the adsorption device, and the motor for the device's movement. The Bluetooth module receives command signals from an Android wireless transceiver and relays them to the MC9SX128 microprocessor. The microprocessor processes these signals and directs the corresponding modules to execute actions for the spraying operation.    </p>
+    <p>
+      Additionally, the button module and display module serve to adjust the device's operating mode and showcase its current operational status. This comprehensive setup enables the device to efficiently perform its spraying tasks.    </p>
+    <div class="text-center">
+      <img src="Fig2.png" class="mr-15 p-teaser mb-sm-5" style="width: 65%;" />
+    </div>
+
+
+
+    <h4 class="mb-3 text-center text-sm-left">Power circuit</h4>
+    <p>
+      Because each module and component in the spraying device designed in this project requires different voltages for normal operation, the power module of the device developed in this project consists of a high-power lithium battery and a DC-DC DC boost circuit, mainly MC9SX128 minimum. The logic voltage of the system and the voltage of the motor drive module. The power module directly outputs the 12V voltage of the battery to the power drive module to drive the motor, and then converts the 12V voltage into 5V or 3V voltage through the voltage regulator chip LM2956S-5.0 to provide power for the microprocessor and other modules in the control circuit to ensure The power supply to each part of the intelligent small wall spraying device is stable. The power supply circuit diagram is shown in the figure.    </p>
+    <div class="text-center">
+      <img src="power.png" class="mr-15 p-teaser mb-sm-5" style="width: 50%;" />
+    </div>
+
+    <h4 class="mb-3 text-center text-sm-left">DC motor and drive circuit</h4>
+    <p>
+      The motor drive module receives the PWM square wave signal from the microprocessor through the cable. According to different signals, it controls two motors installed in the lower part of the fuselage to control the main wheel and a dust removal roller brush control motor located in the front of the fuselage. By controlling the rotation speed and steering of the three motors, the device can complete forward, backward, steering and other actions on the wall. By controlling the speed of the motor of the dust removal device, the dust removal intensity of the device on different surfaces can be controlled to better remove dust on the wall to achieve the corresponding spraying effect and provide a better adsorption environment.    </p>
+    <div class="text-center">
+      <img src="DC.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+  
+
+    <h4 class="mb-3 text-center text-sm-left">Display and button circuit</h4>
+    <p>
+      The display module designed in this project uses a set of four digital tubes as the display and is connected to the microprocessor through cable pins. It is used to real-time monitor the angle between the device body and the horizontal plane of the wall during the debugging and operation of the device. It is convenient. The operator checks the operating status of the device and the monitoring status of the fuselage attitude. The button module consists of four touch buttons, including the power button, reset button, adsorption button, and run mode button.    </p>
+    <div class="text-center">
+      <img src="LED.png" class="mr-15 p-teaser mb-sm-5" style="width: 40%;" />
+      <img src="button.png" class="mr-15 p-teaser mb-sm-5" style="width: 40%;" />
+    </div>
+
+    <h4 class="mb-3 text-center text-sm-left">Software program design</h4>
+    <p>
+      The program algorithm is the main control brain of the device. It is mainly responsible for directing the spraying device to perform different operating states. It needs to complete various tests before operation, analyze the collected data and control various instructions of the device. Front-end detection is mainly to ensure that the device detects whether each module meets the basic conditions for operation before operation; data processing is mainly to process the data collected by each sensor and feed the processing results back to each operating module; control execution tasks When receiving various instructions sent by the processor, the corresponding module performs functional processing on the instructions and finally realizes various tasks. Its architecture diagram is shown in the figure.    </p>
+      <div class="text-center">
+        <img src="Fig3.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+      </div>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Conclusion</h4>
+    <p>
+      This project uses the existing inefficient method of spraying the walls of high-rise buildings and combines it with the existing wall moving device technology to develop this smart and small wall spraying device. Compared with the existing wall spraying devices, the device designed in this project is lightweight, can be remotely and intelligently controlled, can carry out spraying operations according to set routes, can be safely and stably attached to the wall and moved, and can complete smooth obstructions. Efficient work under various types of walls.    </p>
+
+
+    </main>
+
+
+
+
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=8SiDNmnmRKXoaSgkZe-3u8muBOFpY6OlPJDaTGWYLAs&cl=ffffff&w=250"></script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

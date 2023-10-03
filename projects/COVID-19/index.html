@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1168479-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1168479-8');
+    </script>
+    <style>
+            a {
+                color: #1772d0;
+                text-decoration:none;
+            }
+            a:focus, a:hover {
+                color: #f09228;
+                text-decoration:none;
+            }
+
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: Helvetica, Helvetica, sans-serif;
+        <!-- background-color: #333;
+        color: white-->}
+      p {line-height: 26px;}
+      main.container {max-width: 960px;}
+      span.p-title {font-size: 16px;}
+      span.p-authors {font-style: normal;font-size: 16px;}
+      span.p-conference {font-style: italic;;font-size: 16px;}
+      .p-bibtex {font-size: 12px; margin-bottom: 0px; max-width: 650px; text-align: left;}
+      img.p-teaser {width: 200px;}
+      img.profile {
+        width: 160px;
+        height: 160px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);
+      }
+    </style>
+
+    <title>Xin Yao</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="mt-5 mb-5 text-center">
+          <div class="text-center text-sm-center">
+            <h2>Modeling Propagation with Agent-Based Models (ABM) for COVID-19 Diffusion</h2>
+        
+	    <br>
+          </div>
+      </div>
+
+      <h4 class="mb-3 text-center text-sm-left">Introduction</h4>
+
+    <p>
+      The ongoing COVID-19 pandemic, caused by SARSCoV2, affects every aspect of life, including politics, education, economy, society, environment, and climate. It disrupts global supply chains and production. Social distancing measures are the primary defense against the virus, but their effects are hard to predict due to societal complexity. To understand this better, modeling and simulating the COVID-19 spread using Agent-Based Simulations (ABS) is valuable. ABS simplifies complex systems, providing accurate results and insights into agent behaviors, interactions, and the impact of interventions. This approach is especially useful for simulating the effects of various control measures on agent behaviors in our study.
+    </p>
+    <div class="text-center">
+      <img src="procedure.png" class="mr-15 p-teaser mb-sm-5" style="width: 50%;" />
+    </div>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Methodology</h4>
+    <p>
+      This project has two main steps. First, we train a model using past epidemic data, adjusting various parameters to fit the early stages of the pandemic when data is limited. This step is challenging due to the need for computational resources and finding the right balance between accuracy and speed. We determine parameters like infection probabilities, phase transitions, and initial infected numbers.
+    </p>
+    <p>
+      The best hyper-parameter we got is [0.30177623145943966, 0.024417043096081066, 0.08680351906158358, 0.2559760712977659, 0.0780734952997192, 0.10695843252151621, 0.04320625610948192, 0.43910389451837384, 40.0, 91.0, 200.0], for which the MSE is 1630.98, which means the daily mortality difference between the simulation and the reality is around 40 on average, and we consider it in a reasonable range and acceptable. And the predicted pandemic data is shown in the figure.    
+    </p>
+
+    <p>
+      In the second step, we use these parameters to predict future pandemic trends, including daily infections, mortality rates, and the impact of different policies, the results show that it can be a valuable tool for future pandemic predictions.    
+    </p>
+
+    <h4 class="mb-3 text-center text-sm-left">Results</h4>
+    <div class="text-center">
+      <img src="Fig1.png" class="mr-15 p-teaser mb-sm-5" style="width: 30%;" />
+      <img src="Fig2.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+    <div class="text-center">
+      <img src="Fig3.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+      <img src="Fig6.png" class="mr-15 p-teaser mb-sm-5" style="width: 30%;" />
+    </div>
+    <div class="text-center">
+      <img src="Fig4.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+    <div class="text-center">
+      <img src="Fig5.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+    <div class="text-center">
+      <img src="Fig7.png" class="mr-15 p-teaser mb-sm-5" style="width: 100%;" />
+    </div>
+
+
+
+
+    </main>
+
+
+
+
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=8SiDNmnmRKXoaSgkZe-3u8muBOFpY6OlPJDaTGWYLAs&cl=ffffff&w=250"></script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

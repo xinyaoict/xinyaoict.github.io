@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1168479-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1168479-8');
+    </script>
+    <style>
+            a {
+                color: #1772d0;
+                text-decoration:none;
+            }
+            a:focus, a:hover {
+                color: #f09228;
+                text-decoration:none;
+            }
+
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: Helvetica, Helvetica, sans-serif;
+        <!-- background-color: #333;
+        color: white-->}
+      p {line-height: 26px;}
+      main.container {max-width: 960px;}
+      span.p-title {font-size: 16px;}
+      span.p-authors {font-style: normal;font-size: 16px;}
+      span.p-conference {font-style: italic;;font-size: 16px;}
+      .p-bibtex {font-size: 12px; margin-bottom: 0px; max-width: 650px; text-align: left;}
+      img.p-teaser {width: 200px;}
+      img.profile {
+        width: 160px;
+        height: 160px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);
+      }
+    </style>
+
+    <title>Xin Yao</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="mt-5 mb-5 text-center">
+          <div class="text-center text-sm-center">
+            <h2>Analysis of Arrhythmia Classification on ECG Dataset</h2>
+        
+	    <br>
+          </div>
+      </div>
+
+      <h4 class="mb-3 text-center text-sm-left">Introduction</h4>
+
+    <p>
+      In the realm of medical diagnostics, the accurate identification and classification of cardiac arrhythmias are of paramount importance. Cardiac arrhythmias encompass a range of irregular heart rhythms that can have serious implications for a patient's health. Detecting and classifying these arrhythmias swiftly and precisely is vital for effective patient care and treatment planning.    </p>
+    <p>
+      In recent years, the utilization of advanced data analysis techniques, particularly classification methods, has emerged as a promising avenue for improving the diagnosis of cardiac arrhythmias. These classification methods harness the power of machine learning and data science to analyze intricate arrhythmia data sets, offering healthcare professionals a more comprehensive understanding of the underlying patterns and trends.    </p>
+    <p>
+      This exploration delves into the application of classification methods to analyze arrhythmia data, with the goal of enhancing our ability to identify and differentiate various types of cardiac arrhythmias. By leveraging machine learning algorithms, such as decision trees, support vector machines, neural networks, and more, we aim to create accurate and efficient systems for arrhythmia classification. These systems not only have the potential to streamline diagnosis but also to provide valuable insights into the prognosis and treatment strategies for patients with cardiac arrhythmias.    </p>
+
+
+      <h4 class="mb-3 text-center text-sm-left">Neural Networks</h4>
+      <h4 class="mb-3 text-center text-sm-left">1. Training data with 2 classes</h4>
+    <p>
+      Firstly, we define the class, since the better activation function for two classes is sigmoid, the sigmoid output is the probability from 0 to 1. We define the class as class 0 (health) and class 1 (disease). We chose half of the data as a train set. By using the cross-entropy and sigmoid function, with a learning rate equal to 0.1, after training 650 times, the loss is equal to 0.18 and accuracy is equal to 95%, Using the same weight to test the test set, accuracy is around 71%, is better than minimum distance criterion and Bayes criterion. The process of the training is shown in the figure.
+    </p>
+    <div class="text-center">
+      <img src="Fig2.png" class="mr-15 p-teaser mb-sm-5" style="width: 50%;" />
+    </div>
+
+
+    <h4 class="mb-3 text-center text-sm-left">2. Training data with 16 classes</h4>
+    <p>
+      Use the same method, the only difference is using softmax activation instead of the sigmoid function to active neural. Before that, I changed the target matrix from one column to 16 columns, and marked the class as the biggest number in one sample, in order to take out the true class easily and compare it with the class that has the largest probability in the softmax function. After 650 times train, the loss is 0.19 and the accuracy is 96%. Memory this weight and bias, put it into the test set and we get 0.65% of accuracy. The process of training is shown in the figure.
+    </p>
+    <div class="text-center">
+      <img src="Fig3.png" class="mr-15 p-teaser mb-sm-5" style="width: 50%;" />
+    </div>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Support vector machine</h4>
+    <p>
+      In the project, firstly we define the class lab as -1 and 1 according to the theory, then use PCA to find the principle component, use “sklearn” fit class label, and train and test set to get a list of the accuracy for each c from 0.1 to 3. Then choose number c which lets train accuracy larger than 90% and test accuracy as large as possible. Then I get the c is equal to 1.1. Use this value, fit the train and test set again, and get the estimated result.
+    </p>
+    <div class="text-center">
+      <img src="Fig4.png" class="mr-15 p-teaser mb-sm-5" style="width: 50%;" />
+    </div>
+      Summarize the result of neural network and SVM:
+    </p>
+    <div class="text-center">
+      <img src="Fig5.png" class="mr-15 p-teaser mb-sm-5" style="width: 80%;" />
+    </div>
+
+
+
+    </main>
+
+
+
+
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=8SiDNmnmRKXoaSgkZe-3u8muBOFpY6OlPJDaTGWYLAs&cl=ffffff&w=250"></script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

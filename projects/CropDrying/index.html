@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1168479-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1168479-8');
+    </script>
+    <style>
+            a {
+                color: #1772d0;
+                text-decoration:none;
+            }
+            a:focus, a:hover {
+                color: #f09228;
+                text-decoration:none;
+            }
+
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: Helvetica, Helvetica, sans-serif;
+        <!-- background-color: #333;
+        color: white-->}
+      p {line-height: 26px;}
+      main.container {max-width: 960px;}
+      span.p-title {font-size: 16px;}
+      span.p-authors {font-style: normal;font-size: 16px;}
+      span.p-conference {font-style: italic;;font-size: 16px;}
+      .p-bibtex {font-size: 12px; margin-bottom: 0px; max-width: 650px; text-align: left;}
+      img.p-teaser {width: 200px;}
+      img.profile {
+        width: 160px;
+        height: 160px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);
+      }
+    </style>
+
+    <title>Xin Yao</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="mt-5 mb-5 text-center">
+          <div class="text-center text-sm-center">
+            <h2>A method of small particle crop drying control</h2>
+        
+	    <br>
+          </div>
+      </div>
+
+      <h4 class="mb-3 text-center text-sm-left">Introduction</h4>
+
+    <p>
+      The mechanical dryer through strong wind is the mainstream of the market, but this dryer has many shortcomings, such as it is only used to dry specific crops, the body is a huge, large demand for labor, and so on. It has been unable to meet the current market for crop baking dry quality, intelligence, energy saving, and environmental protection requirements. In order to solve the above problems, this paper designs a small grain crop drying control system with STM32F103RBT6 as the control core, controlling the control of the stepping motor, axial fan, and carbon fiber heating tube and adjusting the temperature of the drying box. Drying time of small particle crops and other functions. PT100 senses temperature and changes the drying time by four PWM wave intelligent controlling stepper motor speed, so as to achieve the desired drying effect. The small particle drying control system can set different parameters according to the physical and chemical characteristics of different small grain crops, and complete the drying operation with high efficiency, high quality, and low energy consumption.    
+    </p>
+  
+    <h4 class="mb-3 text-center text-sm-left">Hardware structure and working principle of the control system</h4>
+    <p>
+      The small grain crop drying control system mainly consists of six parts, including the main control microcontroller STM32F103RBT6 control part; the temperature sensor part; the motor drive part; the carbon fiber heating tube part; the key input part and the TFT_LCD display part. The working principle diagram of the system is shown in the figure:    
+    </p>
+    <div class="text-center">
+      <img src="Fig2.png" class="mr-15 p-teaser mb-sm-5" style="width: 65%;" />
+    </div>
+    <div class="text-center">
+      <img src="PCB1.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 40%;"/>
+      <img src="PCB3.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 40%;"/>
+    </div>
+
+    <h4 class="mb-3 text-center text-sm-left">Power circuit</h4>
+    <p>
+      The function of the power module of the control circuit board is to reduce the input higher 220V voltage to stable low voltages of 5.0V and 3.3V through LM1117-5.0 and LM1117-3.3, which are used for the temperature detection module. Power supply for key module and driver module. The diode plays a protective role. The LED serves as an indicator. The capacitor plays a rectifying and filtering role. The power circuit design of the control circuit board is shown in the figure:
+    </p>
+    <div class="text-center">
+      <img src="power.png" class="mr-15 p-teaser mb-sm-5" style="width: 50%;" />
+    </div>
+
+    <h4 class="mb-3 text-center text-sm-left">TFT_LCD display circuit</h4>
+    <p>
+      In order to achieve the purpose of real-time monitoring of temperature changes in the drying box, we use TFT_LCD display in this drying control system. In this drying control system, the main control microcontroller STM32F103RBT6 performs a certain conversion after receiving the real-time temperature data fed back from the temperature sensor, transmits the conversion results to the TFT_LCD display, and draws the temperature change curve on the TFT_LCD display. TFT_LCD display circuit is shown in the figure:
+    </p>
+    <div class="text-center">
+      <img src="TFT.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+  
+
+    <h4 class="mb-3 text-center text-sm-left">Control system programming</h4>
+    <p>
+      After ensuring that all components of the drying control system are in normal condition, the program is initialized, and then different drying parameters are set according to the physical and chemical characteristics of different small-grain crops. The button sends a start command to the microcontroller. The microcontroller controls the carbon fiber heating tube, stepper motor and The work of the axial flow fan takes into account that the design needs to compare the temperature during the drying process with the test curve in real time, so the data needs to be stored in the specified array and the curve drawn on the TFT_LCD display so that the control system can Smoothly perform drying operations under parameter settings to meet the requirements of different crops. The overall idea of the design of the small grain crop drying control system is shown in the figure:
+    </p>
+    <div class="text-center">
+      <img src="software.png" class="mr-15 p-teaser mb-sm-5" style="width: 40%;" />
+    </div>
+
+    <h4 class="mb-3 text-center text-sm-left">Conclusion</h4>
+    <p>
+      In repeated experiments, I found that the moisture changes of rapeseed under different physical and chemical conditions during drying operations all follow a power law, and most of them follow the same change pattern. During the drying process, the most severe decrease in moisture content of rapeseed under different physical and chemical conditions occurs immediately after entering the drying oven. When the drying time reaches 30 minutes, the moisture ratio of each group of rapeseed with different physical and chemical properties has dropped below 0.4. By calculating the experimental data, it can be found that the moisture content of rapeseed in each group is lower than 9%d.b at this time. , reaching the national safety storage standards.
+    </p>
+    <p>
+      After many times of debugging the control algorithm program, the basic functions of the small crop drying control system were finally realized. Different parameters can be set according to the physical and chemical properties of different small grain crops to achieve the goals of high efficiency, high quality and low energy consumption.
+    </p>
+
+
+    </main>
+
+
+
+
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=8SiDNmnmRKXoaSgkZe-3u8muBOFpY6OlPJDaTGWYLAs&cl=ffffff&w=250"></script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

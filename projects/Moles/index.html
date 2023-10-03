@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1168479-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1168479-8');
+    </script>
+    <style>
+            a {
+                color: #1772d0;
+                text-decoration:none;
+            }
+            a:focus, a:hover {
+                color: #f09228;
+                text-decoration:none;
+            }
+
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: Helvetica, Helvetica, sans-serif;
+        <!-- background-color: #333;
+        color: white-->}
+      p {line-height: 26px;}
+      main.container {max-width: 960px;}
+      span.p-title {font-size: 16px;}
+      span.p-authors {font-style: normal;font-size: 16px;}
+      span.p-conference {font-style: italic;;font-size: 16px;}
+      .p-bibtex {font-size: 12px; margin-bottom: 0px; max-width: 650px; text-align: left;}
+      img.p-teaser {width: 200px;}
+      img.profile {
+        width: 160px;
+        height: 160px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);
+      }
+    </style>
+
+    <title>Xin Yao</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="mt-5 mb-5 text-center">
+          <div class="text-center text-sm-center">
+            <h2>MoleSymmetry: Enhancing Melanoma Diagnosis with Advanced Border and Asymmetry Algorithms</h2>
+        
+	    <br>
+          </div>
+      </div>
+
+      <h4 class="mb-3 text-center text-sm-left">Introduction</h4>
+
+    <p>
+      Melanoma is a type of skin cancer that can spread to other organs in the body. The doctor usually considers 5 features to diagnose melanoma. The 5 so-called "ABCDE" features are A-asymmetry, B- border, C - color, D - diameter, E - evolution. In this report, we focus on borders and asymmetry. We design algorithms to extract these two features to help doctors diagnose melanoma. We evaluate the ratio between the perimeter of the mole and the perimeter of the corresponding circle: the higher this value the more indented the border and the more dangerous the mole. We also invent a way to measure the asymmetry in moles based on that a mole that is an ellipse is symmetric.
+    </p>
+    <p>
+      Our main contributions to this report are:
+    </p>
+    <p>
+      1. Design an algorithm to detect the contour of moles.
+    </p>
+    <p>
+      2. Design an algorithm to evaluate the asymmetry of moles.
+    </p>
+    <p>
+      1. Design an algorithm to detect the contour of moles.
+    </p>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Dataset</h4>
+
+    <p>
+      The dataset in this experiment consists of three classes: low risk, medium risk and melanoma case. There are 13, 16 and 27 images in each class respectively. All the moles are roughly in the center of images.    </p>
+    
+
+      <h4 class="mb-3 text-center text-sm-left">Contour Detection</h4>
+
+      <p>
+        The contour detection algorithm designed by us can be formulated as follows:
+      </p>
+      <p>
+        1. Select the region of interest(ROI) which contains the mole.
+      </p>
+      <p>
+        2. Use K-Means algorithm to cluster the pixels according to the pixel values and choose the cluster with the darkest values to mole.
+      </p>
+      <p>
+        3. Filter the region of interest to discard the outliers which don’t belong to mole.
+      </p>
+      <p>
+        4. Find the first and last pixel of the mole in each row and in each column as the contour of the mole.
+      </p>
+      <div class="text-center">
+        <img src="contour_low_1.png" class="mr-15 p-teaser mb-sm-5" style="width: 30%;" />
+      </div>
+
+
+
+    <h4 class="mb-3 text-center text-sm-left">Symmetry Evaluation</h4>
+
+    <p>
+      The symmetry evaluation algorithm can be formulated as follows:    </p>
+    <p>
+      1. Rotate the mole to align its major axis with x-axis horizontally and its minor axis with y-axis vertically.    </p>
+    <p>
+      2. Divide the mole along x-axis into M portions, for each portion, calculate the difference between top part and bottom part.    </p>
+    <p>
+      3. Divide the mole along y-axis into N portions, for each portion, calculate the difference between left part and right part.    </p>
+    <p>
+      4. Calculate the sum over above differences as the error of symmetry.    </p>
+    <div class="text-center">
+      <img src="fig2.png" class="mr-15 p-teaser mb-sm-5" style="width: 55%;" />
+    </div>
+    <p>
+      The error of symmetry e is therefore defined as:    </p>
+    <div class="text-center">
+      <img src="for1.png" class="mr-15 p-teaser mb-sm-5" style="width: 45%;" />
+    </div>
+    <p>
+      where M and N is the number of portions along x-axis and y-axis respectively. For a symmetric object the error e is equal to zero.
+    </p>
+    
+    
+    
+    <h4 class="mb-3 text-center text-sm-left">Conclusion</h4>
+
+    <p>
+      The experiment results as well as the statistical values are shown in Table 1. We can find that when the mole becomes serious, the border ratio becomes larger. For the symmetry error, the melanoma case has the maximum value, but the low-risk case has a slightly larger value than the medium-risk case. In this report, we design algorithms to detect the contour of moles and evaluate the asymmetry of moles. We also evaluate the mole dataset using designed algorithms and give the results of the experiment, which show the effectiveness of the proposed algorithms.   </p>
+    <p>
+    <div class="text-center">
+      <img src="Tab1.png" class="mr-15 p-teaser mb-sm-5" style="width: 40%;" />
+    </div>
+
+    </main>
+
+
+
+
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=8SiDNmnmRKXoaSgkZe-3u8muBOFpY6OlPJDaTGWYLAs&cl=ffffff&w=250"></script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
