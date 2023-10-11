@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1168479-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1168479-8');
+    </script>
+    <style>
+            a {
+                color: #1772d0;
+                text-decoration:none;
+            }
+            a:focus, a:hover {
+                color: #f09228;
+                text-decoration:none;
+            }
+
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: Helvetica, Helvetica, sans-serif;
+        <!-- background-color: #333;
+        color: white-->}
+      p {line-height: 26px;}
+      main.container {max-width: 960px;}
+      span.p-title {font-size: 16px;}
+      span.p-authors {font-style: normal;font-size: 16px;}
+      span.p-conference {font-style: italic;;font-size: 16px;}
+      .p-bibtex {font-size: 12px; margin-bottom: 0px; max-width: 650px; text-align: left;}
+      img.p-teaser {width: 200px;}
+      img.profile {
+        width: 160px;
+        height: 160px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);
+      }
+    </style>
+
+    <title>Xin Yao</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="mt-5 mb-5 text-center">
+          <div class="text-center text-sm-center">
+            <h2>Machine Learning Methodologies for Airfare Prediction </h2>
+        
+	    <br>
+          </div>
+      </div>
+
+      <h4 class="mb-3 text-center text-sm-left">Abstract</h4>
+
+    <p>
+      In this thesis, we did a systematic comparison of traditional machine learning methods (e.g., Ridge Regression, K-Nearest Neighbor, Random Forest) and deep learning methods (e.g., fully connected networks, convolutional neural networks) on the problem of airfare prediction. We proposed a Bayesian neural network for airfare prediction, which is the first method that utilizes Bayesian Inference for the airfare prediction task. We evaluate the performance of different methods on an open dataset of 10,683 domestic routes in India from March 2019 to June 2019. The experimental results show that deep learning-based methods achieve better results than traditional methods, while Bayesian neural networks can achieve better performance than other machine learning methods.
+    </p>
+  
+    <h4 class="mb-3 text-center text-sm-left">Dataset</h4>
+    <p>
+      The dataset used in this paper is from Kaggle, which contains a total of 10,683 routes between these cities within India: New Delhi, Bangalore, Cochin, Kolkata, Hyderabad, and Delhi from March 2019 to June 2019, and from this data, each raw data contains 11 fields of information, as shown in the chart.
+    </p>
+
+    <div class="text-center">
+      <img src="data.png" class="mr-15 p-teaser mb-sm-5" style="width:100%;" />
+    </div>
+
+
+
+    <h4 class="mb-3 text-center text-sm-left">Experimental Results</h4>
+    <h4 class="mb-3 text-center text-sm-left">Comparison of different methods</h4>
+    <p>
+      This table shows the numerical results of mean squared error(RMSE), mean absolute error (MAE), mean absolute percentage error (MAPE), and coefficient of deter- mination R2 among different methods. Specifically, we implement representative traditional machine learning methods (Lasso Regression, Ridge Regression, Support Vector Regression, K-Nearest Neighbors, XGBoost, Decision Tree, Random Forest) and deep neural networks (Transformer, Fully Connected Network, Bayesian Fully Connected Network, Convolutional Neural Network, Bayesian Convolutional Neural Network).    
+    </p>
+    <p>
+      Comparison of different methods on RMSE, MAE, MAPE, and R2. The best two results are highlighted in red and blue.
+    </p>
+    <div class="text-center"> 
+        <img src="table.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+    <p>
+      It can be observed that for traditional machine learning methods, Decision Tree, XGBoost, and Random Forest achieve significantly better performance than Lasso Regression, Ridge Regression, Support Vector Regression, and KNN. Besides, Random Forest achieves the best performance in all metrics among all traditional machine learning methods.
+    </p>
+    <p>
+      For the deep learning-based methods, the performance of Fully Connected Network, Bayesian FCN, Convolutional Neural Network, and Bayesian CNN achieve better performance than all traditional methods in RMSE and R2. We must highlight that with our proposed Bayesian layers, the performance of CNN and FCN can be both improved. Although Transformer is a recently popular method in various fields, the performance is the worst among all deep learning methods, which means it is not a ideal candidate for such an airfare prediction task. Besides, it should be noticed that Random Forest, as a traditional method, still achieves the best performance in MAE and MAPE among all the methods, which means the traditional machine learning methods is still playing an important role in our task.
+    </p>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Ablation studies</h4>
+    <p>
+      In order to investigate how much each input feature can affect the final prediction effectively and efficiently, we do ablation studies by removing each input feature respectively. We give the RMSE and MAE results of Random Forest and Convolu- tional Neural Networks.
+    </p>
+    <p>
+      From the data in the table below, we can see that after removing some features, the regression performance becomes better, such as "Route" and "Duration". However, for other features, the performance after deleting them is not as good as retaining all features. In this paper, we consider the case of retaining all features.    </p>
+    <div class="text-center">
+      <img src="Ablation.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+
+
+
+
+    <h4 class="mb-3 text-center text-sm-left">Running time comparisons</h4>
+    <p>
+      We also give comparisons of running time for different methods. Since the tradi- tional methods and deep learning methods are run on CPU and GPU separately, we also give the results separately.    
+    </p>
+    <p>
+      This table shows the running times of different machine learning methods. From the data in the table, we can see that the Decision Tree Regression Model runs the fastest, and the Random Forest Regression Model takes the longest time.
+    </p>
+    <div class="text-center">
+      <img src="runningtime.png" class="mr-15 p-teaser mb-sm-5" style="width: 45%;" />
+    </div>
+    <p>
+      This table shows the running time of different deep learning methods. From the data in the table, we can see that the Fully Connected Network runs the fastest and has the least number of parameters; the Bayesian Convolutional Neural Network takes the longest time and has the largest number of parameters.
+    </p>
+    <div class="text-center">
+      <img src="time.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+  
+
+    <h4 class="mb-3 text-center text-sm-left">Conclusion</h4>
+    <p>
+      In this thesis, we did a systematic comparison of traditional machine learning methods (e.g., Ridge Regression, K-Nearest Neighbor, Random Forest) and deep learning methods (e.g., fully connected networks, convolutional neural networks) on the problem of airfare prediction. We proposed a Bayesian neural network for airfare prediction, which is the first method that utilizes Bayesian Inference for the airfare prediction task. We evaluate the performance of different methods on an open dataset of 10,683 domestic routes in India from March 2019 to June 2019. The experimental results show that deep learning-based methods achieve better results than traditional methods, while Bayesian neural networks can achieve better performance than other machine learning methods.
+    </p>
+    <p>
+      This thesis can be further extended for future work. First, the adpoted public dataset only contains limited data, which hindered the performance of neural networks. It will be more worthwhile to collect a larger and wider dataset to explore the potential of deep neural networks. Second, it will be interesting to utilize the time-series information to make better prediction. Third, it is promising to design special network to better capture useful features and information from the given data.    </p>
+
+
+    </main>
+
+
+
+
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=8SiDNmnmRKXoaSgkZe-3u8muBOFpY6OlPJDaTGWYLAs&cl=ffffff&w=250"></script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
