@@ -43,38 +43,9 @@
         height: 160px;
         border: 1px solid #ddd;
         padding: 5px;
-        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);        
+        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);
       }
-      .profile {
-        float: left; /* Float the profile photo to the left */
-        margin-right: 20px; /* Add margin to the right of the profile photo for spacing */
-    }
-
-    h2 {
-        font-size: 36px; /* Increase the font size for your name */
-        margin-top: 0; /* Remove top margin to move it closer to the profile photo */
-        margin-bottom: 20px; /* Add margin at the bottom to space it from other elements */
-    }
-
-    .about-me {
-        margin-top: 20px; /* Adjust the margin-top for the "About Me" section */
-    }
-    .project {
-      font-size: 30px; /* Adjust the margin-top for the "About Me" section */
-      margin-bottom: 20px;
-    }
-    .p-title {
-        font-weight: bold;
-    }
-
-    hr {
-        height: 1.5px; /* Adjust the height to make the line thicker */
-        background-color: #333; /* Set the background color of the line */
-        border: none; /* Remove the default border style */
-        margin: 20px 0; /* Add margin to the top and bottom of the line */
-    }
     </style>
-
 
     <title>Xin Yao</title>
   </head>
@@ -82,348 +53,151 @@
   <body>
     <main class="container">
       <div class="mt-5 mb-5 text-center">
-          <img src="images/profile.png" alt="profile" class="rounded-circle profile mr-3 mb-sm-1 float-sm-left"/>
           <div class="text-center text-sm-center">
-            <h2>Xin Yao</h2>
-            M.Sc. in ICT for Smart Societies<br>
-            Politecnico di Torino, Italy<br>
-            Currently living in Zurich, Switzerland<br>
-            <a target="_blank" href="https://www.linkedin.com/in/xinyaoai/">LinkedIn</a> |
-            <a target="_blank" href="mailto:xin.yao.ict@gmail.com">Email</a> |
-            <a target="_blank" href="files/CV_XinYao.pdf">CV</a>
-            <br>
-            </p>
+            <h2>Machine Learning Methodologies for Airfare Prediction </h2>
+        
+	    <br>
           </div>
       </div>
 
+      <h4 class="mb-3 text-center text-sm-left">Abstract</h4>
 
-
-
-
-      <h4 class="project"> About Me</h4>
-      
-      <p class="about-me">
-          I am a Master's graduate in Computer Science (Study Program: ICT for Smart Societies) from Politecnico di Torino, Italy.
-           I wrote my Master's thesis at the Department of Control and Computer Engineering,
-          supervised by Prof. Alessandro Aliberti and Prof. Edoardo Patti. 
-           Before my Master's studies, I worked as an Electrical Control Engineer for two years at Kunshan Intelligent Equipment Research Institute, a subsidiary of Shenyang Automation Research Institute. 
-           Before that, I got my Bachelor's degree in Electronic Science and Technology with distinction from Southwest University. My interest lies in the intersection between Sensing, Signal Processing, and Applied Machine Learning.
-      </p>
-
-
-      <h4 class="project"> Education</h4>
-      
-      <p class="about-me">
-          Master of Science, ICT for Smart Societies, Politecnico di Torino, Italy, Oct. 2019-Oct. 2022<br>
-          Bachelor of Science, Electronic Science and Technology, Southwest University, China, Oct. 2013-Jun. 2017<br>
-      </p>
-
-      <h4 class="project"> Work Experience</h4>
-    
-      <p class="about-me">
-          Software Engineering Intern, Syncroweb, Italy, Feb. 2023-May. 2023<br>
-          Electrical Control Engineer, Kunshan Intelligent Equipment Research Institute, China, Oct. 2017-Sep. 2019
-          <br>
-      </p>
-	
-
-      <h4 class="project">Projects</h4>
-
-      <ul class="list-unstyled">
-
-
-        <li class="media">
-          <div class="media-body text-center">
-            <a href="projects/Thesis/index.html">
-              <img src="images/airfare.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-            </a>
-            <p class="text-left">
-              <span class="p-title">Machine Learning Methodologies for Airfare Prediction</span></br>
-              <span class="p-conference">Master Thesis, Politecnico di Torino</span></br>
-              <a style="color:rgb(255, 30, 30);">Publication</a> <span class="p-conference"> in the IEEE Computer Society Signature Conference on Computers, Software, and Applications (COMPSAC 2023)</span></br>
-              <a class="mr-3" target="_blank" href="projects/Thesis/index.html"><i class="fa fa-gear"></i> Project Page </a>
-              <a class="mr-3" target="_blank" href="files/Xin_Yao_s_Master_thesis___Airfare_prediction.pdf"><i class="fa fa-file-pdf-o"></i> Thesis</a>
-              <a class="mr-3" target="_blank" href="files/paper.pdf"><i class="fa fa-file-pdf-o"></i> Paper</a>
-
-       <div class="collapse" id="bibtex_egoposer">
-          <div class="card card-body">
-              <pre class="p-bibtex">
-	@article{jiang2023egoposer,
-	  title={EgoPoser: Robust Real-Time Ego-Body Pose Estimation in Large Scenes},
-	  author={Jiang, Jiaxi and Streli, Paul and Meier, Manuel and Holz, Christian},
-	  journal={arXiv preprint arXiv:2308.06493},
-	  year={2023}
-	}
-      
-            </pre>
-            </div>
-              </div>
+    <p>
+      With the booming tourism industry, more and more people are choosing airplanes as a means of transportation for long-distance travel. Accurate low-price forecasting of air tickets helps the aviation industry to match demand and supply flexibly and make full use of aviation resources. Airline companies use dynamic pricing strategies to determine the price of airline tickets to maximize profits when selling airline tickets. Passengers who choose airplanes as a means of transportation want to purchase tickets at the lowest selling price for the flight of their choice. However, airline tickets are a special commodity that is time-sensitive and scarce, and the price of airline tickets is affected by various factors, such as the departure time of the plane, the number of hours of advance purchase, and the airline flight, so it is difficult for consumers to know the best time to buy a ticket. Deep learning algorithms have made great achievements in various fields in recent years, however, most prior work on airfare prediction problems is based on traditional machine learning methods, thus the performance of deep learning on this problem remains unclear. In this thesis, we did a systematic comparison of various traditional machine learning methods (i.e., Ridge Regression, Lasso Regression, K-Nearest Neighbor, Decision Tree, XGBoost, Random Forest) and deep learning methods (e.g., Fully Connected Networks, Convolutional Neural Networks, Transformer) on the problem of airfare prediction. Inspired by the observation that ensemble models like XGBoost and Random Forest achieve better performance than other traditional machine learning methods, we proposed a Bayesian neural network for airfare prediction, which is the first method that utilizes Bayesian Inference for the airfare prediction task. We evaluate the performance of different methods on an open dataset of 10,683 domestic routes in India from March 2019 to June 2019. The experimental results show that deep learning-based methods achieve better results than traditional methods in RMSE and R2, while Bayesian neural networks can achieve better performance than other machine learning methods.
+    </p>
   
-      
-      </p>
-          </div>
-        </li>	
+
+
+    <h4 class="mb-3 text-center text-sm-left">Traditionary Methods</h4>
+    <p>
+      In this paper, we used several traditionary methods to do the prediction, these methods are: Ridge Regression, Lasso Regression, K-Nearest Neighbors, Support Vector Regression, XGBoost, Decision Tree and Random Forest Regression. 
+    </p>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Fully Connected Neural Network</h4>
+    <p>
+      In this part, we built a fully connected neural network, which contains seven linear layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer is thirteen. And the number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size as 128. The performance is as good as the random forest regression model’s.
+    </p>
+    <div class="text-center">
+      <img src="FCNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+
+    <h4 class="mb-3 text-center text-sm-left">Convolutional Neural Network</h4>
+    <p>
+      In this part, we built a convolutional neural network, which contains seven convo- lutional layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer is thirteen. And the number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size as 128.
+    </p>
+    <div class="text-center">
+      <img src="CNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Transformer</h4>
+    <p>
+      In this thesis, we design a Transformer model which has 3-layer self-attention layers and set the number of heads as 4. Since our input data do not contain sequential information, we replicate it to a dimension of 16 to simulate series data. Next, we apply linear embedding to input data to enrich the features from 13 to 256. Then we feed these sequential high-dimensional features into the Transformer encoder, which is followed by a global average pooling to get the global features among the sequential features. Finally, we apply two fully connected layers, with the number of output nodes as 256 and 1, to get the final prediction.
+    </p>
+    <div class="text-center">
+      <img src="Transformer.png" class="mr-15 p-teaser mb-sm-5" style="width: 40%;" />
+    </div>
+
+    <h4 class="mb-3 text-center text-sm-left">Beyesian Neural Network</h4>
+    <div class="text-center">
+      <img src="Bayesian.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div> 
+    <p>
+      Local Reparametrisation Trick: Translate global uncertainty in the weights into a form of local uncertainty which is independent across examples.
+    </p>
+    <p>
+      Specifically, we do not sample the weights, but instead the layer activations -> Computational acceleration
+    </p>
+    <div class="text-center">
+      <img src="LocalReparametrisationTrick  .png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div> 
+    <p>
+      In this part, we built a bayesian fully connected neural network, which contains two bayesian layers and five linear layers, each of which is followed by batch nor- malization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer is thirteen. And the number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size as 128.
+    </p>
+    <div class="text-center">
+      <img src="BFCNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+    <p>
+      Meanwhile, we built a Bayesian Convolutional Neural Network, which contains one bayesian layer and six convolutional layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer is thirteen. And the number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size to 128.
+    </p>
+    <div class="text-center">
+      <img src="BCNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Dataset</h4>
+    <p>
+      The dataset used in this paper is from Kaggle, which contains a total of 10,683 routes between these cities within India: New Delhi, Bangalore, Cochin, Kolkata, Hyderabad, and Delhi from March 2019 to June 2019, and from this data, each raw data contains 11 fields of information, as shown in the chart.
+    </p>
+    <div class="text-center">
+      <img src="data.png" class="mr-15 p-teaser mb-sm-5" style="width:100%;" />
+    </div>
 
 
 
 
+    <h4 class="mb-3 text-center text-sm-left">Experimental Results</h4>
+    <h4 class="mb-3 text-center text-sm-left">Comparison of different methods</h4>
+    <p>
+      This table shows the numerical results of mean squared error(RMSE), mean absolute error (MAE), mean absolute percentage error (MAPE), and coefficient of deter- mination R2 among different methods. Specifically, we implement representative traditional machine learning methods (Lasso Regression, Ridge Regression, Support Vector Regression, K-Nearest Neighbors, XGBoost, Decision Tree, Random Forest) and deep neural networks (Transformer, Fully Connected Network, Bayesian Fully Connected Network, Convolutional Neural Network, Bayesian Convolutional Neural Network).    
+    </p>
+    <p>
+      Comparison of different methods on RMSE, MAE, MAPE, and R2. The best two results are highlighted in red and blue.
+    </p>
+    <div class="text-center"> 
+        <img src="table.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+    <p>
+      It can be observed that for traditional machine learning methods, Decision Tree, XGBoost, and Random Forest achieve significantly better performance than Lasso Regression, Ridge Regression, Support Vector Regression, and KNN. Besides, Random Forest achieves the best performance in all metrics among all traditional machine learning methods.
+    </p>
+    <p>
+      For the deep learning-based methods, the performance of Fully Connected Network, Bayesian FCN, Convolutional Neural Network, and Bayesian CNN achieve better performance than all traditional methods in RMSE and R2. We must highlight that with our proposed Bayesian layers, the performance of CNN and FCN can be both improved. Although Transformer is a recently popular method in various fields, the performance is the worst among all deep learning methods, which means it is not a ideal candidate for such an airfare prediction task. Besides, it should be noticed that Random Forest, as a traditional method, still achieves the best performance in MAE and MAPE among all the methods, which means the traditional machine learning methods is still playing an important role in our task.
+    </p>
 
 
-        <li class="media">
-          <div class="media-body text-center">
-            <a href="projects/Parkinson/index.html">
-              <img src="images/Parkinson.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-            </a>
-            
-            <p class="text-left">
-              <span class="p-title">Regression on Parkinsons Telemonitoring Dataset</span></br>
-              <span class="p-conference">Project Work, Politecnico di Torino</span></br>
-              <a class="mr-3" target="_blank" href="projects/Parkinson/index.html"><i class="fa fa-gear"></i> Project Page </a>
+    <h4 class="mb-3 text-center text-sm-left">Ablation studies</h4>
+    <p>
+      In order to investigate how much each input feature can affect the final prediction effectively and efficiently, we do ablation studies by removing each input feature respectively. We give the RMSE and MAE results of Random Forest and Convolu- tional Neural Networks.
+    </p>
+    <p>
+      From the data in the table below, we can see that after removing some features, the regression performance becomes better, such as "Route" and "Duration". However, for other features, the performance after deleting them is not as good as retaining all features. In this paper, we consider the case of retaining all features.    </p>
+    <div class="text-center">
+      <img src="Ablation.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+
+
+
+
+    <h4 class="mb-3 text-center text-sm-left">Running time comparisons</h4>
+    <p>
+      We also give comparisons of running time for different methods. Since the traditional methods and deep learning methods are run on CPU and GPU separately, we also give the results separately.    
+    </p>
+    <p>
+      This table shows the running times of different machine-learning methods. From the data in the table, we can see that the Decision Tree Regression Model runs the fastest, and the Random Forest Regression Model takes the longest time.
+    </p>
+    <div class="text-center">
+      <img src="runningtime.png" class="mr-15 p-teaser mb-sm-5" style="width: 45%;" />
+    </div>
+    <p>
+      This table shows the running time of different deep-learning methods. From the data in the table, we can see that the Fully Connected Network runs the fastest and has the least number of parameters; the Bayesian Convolutional Neural Network takes the longest time and has the largest number of parameters.
+    </p>
+    <div class="text-center">
+      <img src="time.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
   
-       <div class="collapse" id="bibtex_egoposer">
-          <div class="card card-body">
-              <pre class="p-bibtex">
-	@article{jiang2023egoposer,
-	  title={EgoPoser: Robust Real-Time Ego-Body Pose Estimation in Large Scenes},
-	  author={Jiang, Jiaxi and Streli, Paul and Meier, Manuel and Holz, Christian},
-	  journal={arXiv preprint arXiv:2308.06493},
-	  year={2023}
-	}
-      
-            </pre>
-            </div>
-              </div>
-  
-      
-      </p>
-          </div>
-        </li>	      
-          
 
+    <h4 class="mb-3 text-center text-sm-left">Conclusion</h4>
+    <p>
+      In this thesis, we did a systematic comparison of traditional machine learning methods (e.g., Ridge Regression, K-Nearest Neighbor, Random Forest) and deep learning methods (e.g., fully connected networks, convolutional neural networks) on the problem of airfare prediction. We proposed a Bayesian neural network for airfare prediction, which is the first method that utilizes Bayesian Inference for the airfare prediction task. We evaluate the performance of different methods on an open dataset of 10,683 domestic routes in India from March 2019 to June 2019. The experimental results show that deep learning-based methods achieve better results than traditional methods, while Bayesian neural networks can achieve better performance than other machine learning methods.
+    </p>
+    <p>
+      This thesis can be further extended for future work. First, the adopted public dataset only contains limited data, which hinders the performance of neural networks. It will be more worthwhile to collect a larger and wider dataset to explore the potential of deep neural networks. Second, it will be interesting to utilize the time-series information to make better prediction. Third, it is promising to design special network to better capture useful features and information from the given data.    </p>
 
-
-
-
-
-
-
-
-
-
-        <li class="media">
-        <div class="media-body text-center">
-          <a href="projects/Moles/index.html">
-            <img src="images/Melanoma.png" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-          </a>
-          <p class="text-left">
-            <span class="p-title">MoleSymmetry: Enhancing Melanoma Diagnosis with Advanced Border and Asymmetry Algorithms</span></br>
-            <span class="p-conference">Project Work, Politecnico di Torino</span></br>
-            <a class="mr-3" target="_blank" href="projects/Moles/index.html"><i class="fa fa-gear"></i> Project Page </a>
-
-		 <div class="collapse" id="bibtex_avatarposer">
-				<div class="card card-body">
-				    <pre class="p-bibtex">
-@inproceedings{jiang2022avatarposer,
-  title={Avatarposer: Articulated full-body pose tracking from sparse motion sensing},
-  author={Jiang, Jiaxi and Streli, Paul and Qiu, Huajian and Fender, Andreas and Laich, Larissa and Snape, Patrick and Holz, Christian},
-  booktitle={European Conference on Computer Vision},
-  pages={443--460},
-  year={2022},
-  organization={Springer}
-}	  
-	  
-					</pre>
-				  </div>
-			      </div>
-
-	  
-	  </p>
-        </div>
-      </li>	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-	      
-        <li class="media">
-        <div class="media-body text-center">
-          <a href="projects/COVID-19/index.html">
-            <img src="images/Covid19.png" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-          </a>
-          <p class="text-left">
-            <span class="p-title">Modeling Propagation with Agent-Based Models (ABM) for COVID-19 Diffusion</span></br>
-            <span class="p-conference">Project Work, Politecnico di Torino</span></br>
-            <a class="mr-3" target="_blank" href="projects/COVID-19/index.html"><i class="fa fa-gear"></i> Project Page </a>
-	  
-		 <div class="collapse" id="bibtex_taptype">
-				<div class="card card-body">
-				    <pre class="p-bibtex">
-@inproceedings{chi2022-taptype,
-author = {Streli, Paul and Jiang, Jiaxi and Fender, Andreas and Meier, Manuel and Romat, Hugo and Holz, Christian},
-title = {TapType: Ten-finger text entry on everyday surfaces via Bayesian inference},
-year = {2022},
-isbn = {9781450391573},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-doi = {https://doi.org/10.1145/3491102.3501878},
-booktitle = {Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems},
-numpages = {16}
-}
-					</pre>
-				  </div>
-			      </div>
-
-	  
-	  </p>
-        </div>
-      </li>
-
-
-
-
-        <li class="media">
-          <div class="media-body text-center">
-            <a href="projects/ECG/index.html">
-              <img src="images/ECG2.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-            </a>
-            <p class="text-left">
-              <span class="p-title">Analysis of Arrhythmia Classification on ECG Dataset</span></br>
-              <span class="p-conference">Project Work, Politecnico di Torino</span></br>
-              <a class="mr-3" target="_blank" href="projects/ECG/index.html"><i class="fa fa-gear"></i> Project Page </a>
-
-	<div class="collapse" id="bibtex_mobile">
-                <div class="card card-body">
-                    <pre class="p-bibtex">
-@inproceedings{li2020mobile,
-title={A mobile robot hand-arm teleoperation system by vision and imu},
-author={Li, Shuang and Jiang, Jiaxi and Ruppel, Philipp and Liang, Hongzhuo and Ma, Xiaojian and Hendrich, Norman and Sun, Fuchun and Zhang, Jianwei},
-booktitle={2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-pages={10900--10906},
-year={2020},
-organization={IEEE}
-}
-
-</pre>
-</div>
-  </div>
-
-
-</p>
-</div>
-</li>
-
-
-<li class="media">
-<div class="media-body text-center">
-  <a href="projects/CropDrying/index.html">
-    <img src="images/crop.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-  </a>
-  <p class="text-left">
-    <span class="p-title">A Method of Small Particle Crop Drying Control</span></br>
-    <span class="p-conference">Bachelor Thesis, Southwest University</span></br>
-    <span class="p-conference">Chinese University Student Innovation and Entrepreneurship Project</span></br>
-    <a style="color:rgb(255, 30, 30);">Patent</a></br>
-    <a class="mr-3" target="_blank" href="projects/CropDrying/index.html"><i class="fa fa-gear"></i> Project Page </a>
-    <a class="mr-3" target="_blank" href="https://patents.google.com/patent/CN105605906A/en"><i class="fa fa-file-pdf-o"></i> Patent</a>
-
-
-    <div class="collapse" id="bibtex_fbcnn">
-      <div class="card card-body">
-          <pre class="p-bibtex">
-
-</pre>
-</div>
-  </div>
-
-
-</p>
-</div>
-</li>
-
-
-<li class="media">
-<div class="media-body text-center">
-  <a href="projects/SprayingDevice/index.html">
-    <img src="images/Spraying.png" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-  </a>
-  <p class="text-left">
-    <span class="p-title">The Design of a Small Intelligent Spraying Device for Wall Surface</span></br>
-    <a style="color:rgb(255, 30, 30);">Utility Model Patent
-    </span></br>
-    <a class="mr-3" target="_blank" href="projects/SprayingDevice/index.html"><i class="fa fa-gear"></i> Project Page </a>
-    <a class="mr-3" target="_blank" href="files/Utility.jpg"><i class="fa fa-file-pdf-o"></i> Certificate</a>
-    <a class="mr-3" target="_blank" href="https://patents.google.com/patent/CN204562022U/en"><i class="fa fa-file-pdf-o"></i> Patent</a>
-
-
-    <div class="collapse" id="bibtex_fbcnn">
-      <div class="card card-body">
-          <pre class="p-bibtex">
-
-
-		</pre>
-                  </div>
-              </div>
-            </p>
-          </div>
-        </li>
-
-
-
-
-        <li class="media">
-          <div class="media-body text-center">
-            <a href="projects/ICM/index.html">
-              <img src="images/ICM.png" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-            </a>
-            <p class="text-left">
-              <span class="p-title">Solutions to Water Scarcity based on Machine Learning</span></br>
-              <span class="p-conference">2016 International Mathematical Contest in Modeling (ICM)</br>    
-                <a style="color:rgb(255, 30, 30);">Meritorious Winner</a>            
-    
-              </span></br>
-              <a class="mr-3" target="_blank" href="projects/ICM/index.html"><i class="fa fa-gear"></i> Project Page </a>
-              <a class="mr-3" target="_blank" href="files/ICM-52989.pdf"><i class="fa fa-file-pdf-o"></i> Paper</a>
-              <a class="mr-3" target="_blank" href="files/52989 ICM.pdf"><i class="fa fa-file-pdf-o"></i> Certificate</a>
-          
-          
-              <div class="collapse" id="bibtex_fbcnn">
-                <div class="card card-body">
-                    <pre class="p-bibtex">
-          
-          
-              </pre>
-                            </div>
-                        </div>
-                      </p>
-                    </div>
-                  </li>
-
-
-
-      </ul>
-
-      <h4 class="project"> Awards</h4>
-      
-      <p class="about-me">
-        <strong>Scholarships</strong><br>
-          University Scholarship, Jun. 2014<br>
-          National Inspirational Scholarship, Jun. 2015<br>
-          National Scholarship, Jun. 2016<br>
-          <strong>Technology Innovation</strong><br>
-          Grand Prize, The Second Mobile Robot Contest, Science and Technology Committee, May. 2015<br>
-          Successful Entry Prize, Chongqing Board of Education,  Jun. 2015<br>
-          National Undergraduate Innovation and Entrepreneurship Training Program, Dec. 2015<br>
-          Meritorious Winner,  International Interdisciplinary Contest In Modeling (ICM), Feb. 2016<br>  
-          Second Prize at Southwest University, Research on a Serpentine Robot Device, Jul. 2016<br>
-
-
-
-      </p>
 
     </main>
+
+
 
 
 
