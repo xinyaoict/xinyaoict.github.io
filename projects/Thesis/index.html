@@ -66,13 +66,6 @@
       With the booming tourism industry, more and more people are choosing airplanes as a means of transportation for long-distance travel. Accurate low-price forecasting of air tickets helps the aviation industry to match demand and supply flexibly and make full use of aviation resources. Airline companies use dynamic pricing strategies to determine the price of airline tickets to maximize profits when selling airline tickets. Passengers who choose airplanes as a means of transportation want to purchase tickets at the lowest selling price for the flight of their choice. However, airline tickets are a special commodity that is time-sensitive and scarce, and the price of airline tickets is affected by various factors, such as the departure time of the plane, the number of hours of advance purchase, and the airline flight, so it is difficult for consumers to know the best time to buy a ticket. Deep learning algorithms have made great achievements in various fields in recent years, however, most prior work on airfare prediction problems is based on traditional machine learning methods, thus the performance of deep learning on this problem remains unclear. In this thesis, we did a systematic comparison of various traditional machine learning methods (i.e., Ridge Regression, Lasso Regression, K-Nearest Neighbor, Decision Tree, XGBoost, Random Forest) and deep learning methods (e.g., Fully Connected Networks, Convolutional Neural Networks, Transformer) on the problem of airfare prediction. Inspired by the observation that ensemble models like XGBoost and Random Forest achieve better performance than other traditional machine learning methods, we proposed a Bayesian neural network for airfare prediction, which is the first method that utilizes Bayesian Inference for the airfare prediction task. We evaluate the performance of different methods on an open dataset of 10,683 domestic routes in India from March 2019 to June 2019. The experimental results show that deep learning-based methods achieve better results than traditional methods in RMSE and R2, while Bayesian neural networks can achieve better performance than other machine learning methods.
     </p>
   
-    <h4 class="mb-3 text-center text-sm-left">Dataset</h4>
-    <p>
-      The dataset used in this paper is from Kaggle, which contains a total of 10,683 routes between these cities within India: New Delhi, Bangalore, Cochin, Kolkata, Hyderabad, and Delhi from March 2019 to June 2019, and from this data, each raw data contains 11 fields of information, as shown in the chart.
-    </p>
-    <div class="text-center">
-      <img src="data.png" class="mr-15 p-teaser mb-sm-5" style="width:100%;" />
-    </div>
 
 
     <h4 class="mb-3 text-center text-sm-left">Traditional Methods</h4>
@@ -134,7 +127,13 @@
     </div>
 
 
-
+    <h4 class="mb-3 text-center text-sm-left">Dataset</h4>
+    <p>
+      The dataset used in this paper is from Kaggle, which contains a total of 10,683 routes between these cities within India: New Delhi, Bangalore, Cochin, Kolkata, Hyderabad, and Delhi from March 2019 to June 2019, and from this data, each raw data contains 11 fields of information, as shown in the chart.
+    </p>
+    <div class="text-center">
+      <img src="data.png" class="mr-15 p-teaser mb-sm-5" style="width:100%;" />
+    </div>
 
 
 
