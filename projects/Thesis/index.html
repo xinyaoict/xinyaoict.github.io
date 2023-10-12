@@ -75,15 +75,15 @@
     </div>
 
 
-    <h4 class="mb-3 text-center text-sm-left">Traditionary Methods</h4>
+    <h4 class="mb-3 text-center text-sm-left">Traditional Methods</h4>
     <p>
-      In this paper, we used several traditionary methods to do the prediction, these methods are: Ridge Regression, Lasso Regression, K-Nearest Neighbors, Support Vector Regression, XGBoost, Decision Tree and Random Forest Regression. 
+      In this paper, we used several traditional methods to do the prediction, methods are Ridge Regression, Lasso Regression, K-Nearest Neighbors, Support Vector Regression, XGBoost, Decision Tree, and Random Forest Regression. 
     </p>
 
 
     <h4 class="mb-3 text-center text-sm-left">Fully Connected Neural Network</h4>
     <p>
-      In this part, we built a fully connected neural network, which contains seven linear layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer is thirteen. And the number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size as 128. The performance is as good as the random forest regression model’s.
+      In this part, we built a fully connected neural network, which contains seven linear layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer to thirteen. The number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size to 128. The performance is as good as the random forest regression model’s.
     </p>
     <div class="text-center">
       <img src="FCNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
@@ -91,7 +91,7 @@
 
     <h4 class="mb-3 text-center text-sm-left">Convolutional Neural Network</h4>
     <p>
-      In this part, we built a convolutional neural network, which contains seven convo- lutional layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer is thirteen. And the number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size as 128.
+      In this part, we built a convolutional neural network, which contains seven convolutional layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer to thirteen. And the number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size to 128.
     </p>
     <div class="text-center">
       <img src="CNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
@@ -100,7 +100,7 @@
 
     <h4 class="mb-3 text-center text-sm-left">Transformer</h4>
     <p>
-      In this thesis, we design a Transformer model which has 3-layer self-attention layers and set the number of heads as 4. Since our input data do not contain sequential information, we replicate it to a dimension of 16 to simulate series data. Next, we apply linear embedding to input data to enrich the features from 13 to 256. Then we feed these sequential high-dimensional features into the Transformer encoder, which is followed by a global average pooling to get the global features among the sequential features. Finally, we apply two fully connected layers, with the number of output nodes as 256 and 1, to get the final prediction.
+      In this thesis, we design a Transformer model that has 3-layer self-attention layers and set the number of heads as 4. Since our input data do not contain sequential information, we replicate it to a dimension of 16 to simulate series data. Next, we apply linear embedding to input data to enrich the features from 13 to 256. Then we feed these sequential high-dimensional features into the Transformer encoder, which is followed by a global average pooling to get the global features among the sequential features. Finally, we apply two fully connected layers, with the number of output nodes as 256 and 1, to get the final prediction.
     </p>
     <div class="text-center">
       <img src="Transformer.png" class="mr-15 p-teaser mb-sm-5" style="width: 40%;" />
@@ -110,8 +110,9 @@
     <div class="text-center">
       <img src="Bayesian.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
     </div> 
+    <h4 class="mb-3 text-center text-sm-left">Local Reparametrisation Trick</h4>
     <p>
-      Local Reparametrisation Trick: Translate global uncertainty in the weights into a form of local uncertainty which is independent across examples.
+      Definition: Translate global uncertainty in the weights into a form of local uncertainty that is independent across examples.
     </p>
     <p>
       Specifically, we do not sample the weights, but instead the layer activations -> Computational acceleration
@@ -120,13 +121,13 @@
       <img src="LocalReparametrisationTrick  .png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
     </div> 
     <p>
-      In this part, we built a bayesian fully connected neural network, which contains two bayesian layers and five linear layers, each of which is followed by batch nor- malization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer is thirteen. And the number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size as 128.
+      In this part, we built a Bayesian fully connected neural network, which contains two Bayesian layers and five linear layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer to thirteen. The number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size as 128.
     </p>
     <div class="text-center">
       <img src="BFCNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
     </div>
     <p>
-      Meanwhile, we built a Bayesian Convolutional Neural Network, which contains one bayesian layer and six convolutional layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer is thirteen. And the number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size to 128.
+      Meanwhile, we built a Bayesian Convolutional Neural Network, which contains one Bayesian layer and six convolutional layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer to thirteen. The number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size to 128.
     </p>
     <div class="text-center">
       <img src="BCNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
@@ -141,7 +142,7 @@
     <h4 class="mb-3 text-center text-sm-left">Experimental Results</h4>
     <h4 class="mb-3 text-center text-sm-left">Comparison of different methods</h4>
     <p>
-      This table shows the numerical results of mean squared error(RMSE), mean absolute error (MAE), mean absolute percentage error (MAPE), and coefficient of deter- mination R2 among different methods. Specifically, we implement representative traditional machine learning methods (Lasso Regression, Ridge Regression, Support Vector Regression, K-Nearest Neighbors, XGBoost, Decision Tree, Random Forest) and deep neural networks (Transformer, Fully Connected Network, Bayesian Fully Connected Network, Convolutional Neural Network, Bayesian Convolutional Neural Network).    
+      This table shows the numerical results of mean squared error(RMSE), mean absolute error (MAE), mean absolute percentage error (MAPE), and coefficient of determination R2 among different methods. Specifically, we implement representative traditional machine learning methods (Lasso Regression, Ridge Regression, Support Vector Regression, K-Nearest Neighbors, XGBoost, Decision Tree, Random Forest) and deep neural networks (Transformer, Fully Connected Network, Bayesian Fully Connected Network, Convolutional Neural Network, Bayesian Convolutional Neural Network).    
     </p>
     <p>
       Comparison of different methods on RMSE, MAE, MAPE, and R2. The best two results are highlighted in red and blue.
@@ -153,13 +154,13 @@
       It can be observed that for traditional machine learning methods, Decision Tree, XGBoost, and Random Forest achieve significantly better performance than Lasso Regression, Ridge Regression, Support Vector Regression, and KNN. Besides, Random Forest achieves the best performance in all metrics among all traditional machine learning methods.
     </p>
     <p>
-      For the deep learning-based methods, the performance of Fully Connected Network, Bayesian FCN, Convolutional Neural Network, and Bayesian CNN achieve better performance than all traditional methods in RMSE and R2. We must highlight that with our proposed Bayesian layers, the performance of CNN and FCN can be both improved. Although Transformer is a recently popular method in various fields, the performance is the worst among all deep learning methods, which means it is not a ideal candidate for such an airfare prediction task. Besides, it should be noticed that Random Forest, as a traditional method, still achieves the best performance in MAE and MAPE among all the methods, which means the traditional machine learning methods is still playing an important role in our task.
+      For the deep learning-based methods, the performance of Fully Connected Network, Bayesian FCN, Convolutional Neural Network, and Bayesian CNN achieve better performance than all traditional methods in RMSE and R2. We must highlight that with our proposed Bayesian layers, the performance of CNN and FCN can be both improved. Although Transformer is a recently popular method in various fields, the performance is the worst among all deep learning methods, which means it is not an ideal candidate for such an airfare prediction task. Besides, it should be noticed that Random Forest, as a traditional method, still achieves the best performance in MAE and MAPE among all the methods, which means the traditional machine learning methods is still playing an important role in our task.
     </p>
 
 
     <h4 class="mb-3 text-center text-sm-left">Ablation studies</h4>
     <p>
-      In order to investigate how much each input feature can affect the final prediction effectively and efficiently, we do ablation studies by removing each input feature respectively. We give the RMSE and MAE results of Random Forest and Convolu- tional Neural Networks.
+      In order to investigate how much each input feature can affect the final prediction effectively and efficiently, we do ablation studies by removing each input feature. We give the RMSE and MAE results of Random Forest and Convolutional Neural Networks.
     </p>
     <p>
       From the data in the table below, we can see that after removing some features, the regression performance becomes better, such as "Route" and "Duration". However, for other features, the performance after deleting them is not as good as retaining all features. In this paper, we consider the case of retaining all features.    </p>
@@ -172,16 +173,16 @@
 
     <h4 class="mb-3 text-center text-sm-left">Running time comparisons</h4>
     <p>
-      We also give comparisons of running time for different methods. Since the tradi- tional methods and deep learning methods are run on CPU and GPU separately, we also give the results separately.    
+      We also give comparisons of running time for different methods. Since the traditional methods and deep learning methods are run on CPU and GPU separately, we also give the results separately.    
     </p>
     <p>
-      This table shows the running times of different machine learning methods. From the data in the table, we can see that the Decision Tree Regression Model runs the fastest, and the Random Forest Regression Model takes the longest time.
+      This table shows the running times of different machine-learning methods. From the data in the table, we can see that the Decision Tree Regression Model runs the fastest, and the Random Forest Regression Model takes the longest time.
     </p>
     <div class="text-center">
       <img src="runningtime.png" class="mr-15 p-teaser mb-sm-5" style="width: 45%;" />
     </div>
     <p>
-      This table shows the running time of different deep learning methods. From the data in the table, we can see that the Fully Connected Network runs the fastest and has the least number of parameters; the Bayesian Convolutional Neural Network takes the longest time and has the largest number of parameters.
+      This table shows the running time of different deep-learning methods. From the data in the table, we can see that the Fully Connected Network runs the fastest and has the least number of parameters; the Bayesian Convolutional Neural Network takes the longest time and has the largest number of parameters.
     </p>
     <div class="text-center">
       <img src="time.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
@@ -193,7 +194,7 @@
       In this thesis, we did a systematic comparison of traditional machine learning methods (e.g., Ridge Regression, K-Nearest Neighbor, Random Forest) and deep learning methods (e.g., fully connected networks, convolutional neural networks) on the problem of airfare prediction. We proposed a Bayesian neural network for airfare prediction, which is the first method that utilizes Bayesian Inference for the airfare prediction task. We evaluate the performance of different methods on an open dataset of 10,683 domestic routes in India from March 2019 to June 2019. The experimental results show that deep learning-based methods achieve better results than traditional methods, while Bayesian neural networks can achieve better performance than other machine learning methods.
     </p>
     <p>
-      This thesis can be further extended for future work. First, the adpoted public dataset only contains limited data, which hindered the performance of neural networks. It will be more worthwhile to collect a larger and wider dataset to explore the potential of deep neural networks. Second, it will be interesting to utilize the time-series information to make better prediction. Third, it is promising to design special network to better capture useful features and information from the given data.    </p>
+      This thesis can be further extended for future work. First, the adopted public dataset only contains limited data, which hindered the performance of neural networks. It will be more worthwhile to collect a larger and wider dataset to explore the potential of deep neural networks. Second, it will be interesting to utilize the time-series information to make better predictions. Third, it is promising to design a special network to better capture useful features and information from the given data.    </p>
 
 
     </main>
