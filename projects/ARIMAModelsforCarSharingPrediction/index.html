@@ -69,7 +69,7 @@
       An ARIMA model is identified by three parameters (p, d, q). 
     </p>
     <p>
-      1.  p: The number of lag observations included in the model also called the lag order. 
+      1.  p: The number of lag observations included in the model is also called the lag order. 
     </p>
     <p>
       2. d: The number of times that the raw observations are differenced, also called the degree of differencing. 
@@ -92,7 +92,7 @@
       Due to the limitation of the ARIMA model, a stationary series is required for the following steps. In general, a stable time series has no predictable characteristics in the long run. In the rolling plot, a sliding window with a size of 144 hours is chosen because intuitively, the number of rentals will cycle for each week. In the plots, they reflect that this series is stable (Both the mean and the standard are stable). Besides, the oscillation of correlation shows the periodicity of the time series.    </p>
 
     <div class="text-center">
-        <img src="Car2Go1.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 30%;" />
+        <img src="Car2Go1.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
     </div>
 
 
@@ -103,7 +103,7 @@
       In this step, the ACF (Autocorrelation Function) and the PACF (Partial Autocorrelation Function) of the time series are illustrated, from which it is likely to find possible good values for the hyperparameter ‘p’ (the number of lag observations included in the model) and ‘q’ (the size of the moving average window).    
     </p>
     <div class="text-center">
-      <img src="Car2Go2.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 30%;" />
+      <img src="Car2Go2.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
     </div>
     <p>
       The PACFs show a cut-off at point 1, then the possible value for p is 1. Similarly, the ACFs have tailed off first and cut off after point 4, therefore the candidate value for q is 4. Concerning that the differencing is not used, the hyperparameters of the ARIMA model are (1, 0, 4).    
@@ -116,7 +116,7 @@
       In this study, the train window size will be 1 week and the train policy expanding window, for the rental data may change periodically for each week and the expanding window may improve the accuracy of the model. Thus, the data of the 1st week will be used to train the model and then the model will predict the data in the 2nd week and the differences between the prediction and the true data will be illustrated. For the beginning, the model parameters (p,d,q) are (1, 0, 4).
     </p>
     <div class="text-center">
-      <img src="Car2Go3.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 30%;" />
+      <img src="Car2Go3.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
     </div>
     <p>
       The MSEs are Milano car2go MSE: 3443.3300326919048; Munchen car2go MSE: 476.6718364810478; Milano enjoy MSE: 5054.843662599105.    
@@ -125,7 +125,7 @@
       In these three cases, the Munchen data of car2go has the smallest MSE, which can be explained as the good consistency (less outliers) of the data in Munchen. The residuals of the three cities are as follows. The residuals are similar to the uniform distribution, which indicates the effectiveness of the model.    
     </p>
     <div class="text-center">
-      <img src="Car2Go4.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 30%;" />
+      <img src="Car2Go4.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
     </div>
 
 
