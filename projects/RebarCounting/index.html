@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1168479-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1168479-8');
+    </script>
+    <style>
+            a {
+                color: #1772d0;
+                text-decoration:none;
+            }
+            a:focus, a:hover {
+                color: #f09228;
+                text-decoration:none;
+            }
+
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: Helvetica, Helvetica, sans-serif;
+        <!-- background-color: #333;
+        color: white-->}
+      p {line-height: 26px;}
+      main.container {max-width: 960px;}
+      span.p-title {font-size: 16px;}
+      span.p-authors {font-style: normal;font-size: 16px;}
+      span.p-conference {font-style: italic;;font-size: 16px;}
+      .p-bibtex {font-size: 12px; margin-bottom: 0px; max-width: 650px; text-align: left;}
+      img.p-teaser {width: 200px;}
+      img.profile {
+        width: 160px;
+        height: 160px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);
+      }
+    </style>
+
+    <title>Xin Yao</title>
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="mt-5 mb-5 text-center">
+          <div class="text-center text-sm-center">
+            <h2>Rebar Counting based on Object Detection</h2>
+        
+	    <br>
+          </div>
+      </div>
+
+      <h4 class="mb-3 text-center text-sm-left">Background</h4>
+
+    <p>
+      In the area of construction engineering and management, accurate rebar (reinforcing bar) detection and counting are crucial for ensuring structural integrity, compliance with design specifications, and efficient use of materials. Rebars are used extensively in concrete reinforcement, and their precise placement and quantity are vital for the strength and durability of concrete structures.
+    </p>
+    <p>The importance of rebar counting:</p>
+    <p>Structural Integrity: The strength and resilience of reinforced concrete structures heavily depend on the correct placement and quantity of rebars. Inaccurate rebar installation can lead to structural weaknesses, making buildings susceptible to damage under stress.
+    </p>
+    <p>Cost Efficiency: Precise rebar counting helps in estimating the exact amount of material needed, avoiding wastage, and ensuring cost-effective construction practices.
+    </p>
+    <p>Compliance and Safety: Adhering to the architectural and engineering specifications is paramount for construction projects. Accurate rebar counting ensures compliance with these specifications, contributing to the overall safety of the construction.
+    </p>
+
+    <p>The challenges of rebar counting are:</p>
+    <p>Complexity of Detection: Rebars in construction images are often closely packed, overlapped, or partially obscured, making their detection a challenging task for traditional image processing techniques.
+    </p>
+    <p>Variability of Conditions: The appearance of rebars can significantly vary due to lighting conditions, angles of capture, and the presence of construction materials or debris, further complicating the detection process.
+    </p>
+    <p>Scale and Density: Construction projects can vary greatly in scale, and the density of rebars in images can range from sparse to extremely dense clusters, requiring a robust detection system capable of handling such variability.
+    </p>
+    <p>Real-time Processing Needs: In many cases, there's a requirement for real-time or near-real-time processing of images to provide timely feedback to construction teams, posing additional computational challenges.</p>
+
+
+    <h4 class="mb-3 text-center text-sm-left">YOLOv9</h4>
+    <p>
+      Existing methods overlook significant information loss during deep network operations. YOLOv9 addresses this by introducing Programmable Gradient Information (PGI) to combat data loss issues. PGI ensures comprehensive input data for target tasks, enabling reliable gradient information for weight updates. Additionally, YOLOv9 presents a Generalized Efficient Layer Aggregation Network (GELAN), outperforming state-of-the-art methods in parameter utilization, even with conventional convolution operators. PGI's versatility extends to various model sizes, offering superior performance for train-from-scratch models. Source code: https://github.com/WongKinYiu/yolov9. 
+    </p>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Rebar dataset</h4>
+    <div class="text-center">
+      <img src="TrainingResults.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+    <p>
+      Dataset for IJCAI 2021 paper "Object Detection in Densely Packed Scenes via Semi-Supervised Learning with Dual Consistency" 
+    </p>
+    <p>RebarDSC is a new dataset of the industrial rebar collection scene. To construct this dataset:</p>
+    <p>We collected 2,125 images from the top 3 rebar manufacturing companies in Asia,where the image are captured in the real production environment with various types of mobile devices, with resolution vary from 800×600 to 4600×3400;</p>
+    <p>To satisfy the requirement of bundle counting, we capture all the raw images with a bundle of rebar as the image center. If two or more bundles are captured, we only considered the rebar within the bundle closing to the image center and ignored other bundles.</p>
+    <p>We hired professional human workers from rebar manufacturing companies to annotate each image’s bounding box, and finally, 350,348 annotations, 164.9 annotations per image are collected.</p>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Examine training results</h4>
+    <div class="text-center">
+      <img src="TrainingResults.jpg" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+    <p>
+      In this paper, we used several traditional methods to do the prediction, methods are Ridge Regression, Lasso Regression, K-Nearest Neighbors, Support Vector Regression, XGBoost, Decision Tree, and Random Forest Regression. 
+    </p>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Testing the new YOLOv9 model on the Rebar testset</h4>
+    <p>
+      Run let's run the new detect.py file to get all the results.
+      Please remember to set the experiment ID, corresponding to the training procedure above, in --weights runs/train/<expID>/weights/best.pt.
+      After running through all the 1000 test images. You should be able to get an accuracy around 98%.
+    </p>
+    <div class="text-center">
+      <img src="FCNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+
+    <h4 class="mb-3 text-center text-sm-left">Convolutional Neural Network</h4>
+    <p>
+      In this part, we built a convolutional neural network, which contains seven convolutional layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer to thirteen. And the number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size to 128.
+    </p>
+    <div class="text-center">
+      <img src="CNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Transformer</h4>
+    <p>
+      In this thesis, we design a Transformer model that has 3-layer self-attention layers and set the number of heads as 4. Since our input data do not contain sequential information, we replicate it to a dimension of 16 to simulate series data. Next, we apply linear embedding to input data to enrich the features from 13 to 256. Then we feed these sequential high-dimensional features into the Transformer encoder, which is followed by a global average pooling to get the global features among the sequential features. Finally, we apply two fully connected layers, with the number of output nodes as 256 and 1, to get the final prediction.
+    </p>
+    <div class="text-center">
+      <img src="Transformer.png" class="mr-15 p-teaser mb-sm-5" style="width: 40%;" />
+    </div>
+
+    <h4 class="mb-3 text-center text-sm-left">Beyesian Neural Network</h4>
+    <div class="text-center">
+      <img src="Bayesian.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div> 
+    <h4 class="mb-3 text-center text-sm-left">Local Reparametrisation Trick</h4>
+    <p>
+      Definition: Translate global uncertainty in the weights into a form of local uncertainty that is independent across examples.
+    </p>
+    <p>
+      Specifically, we do not sample the weights, but instead the layer activations -> Computational acceleration
+    </p>
+    <div class="text-center">
+      <img src="LocalReparametrisationTrick  .png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div> 
+    <p>
+      In this part, we built a Bayesian fully connected neural network, which contains two Bayesian layers and five linear layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer to thirteen. The number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size as 128.
+    </p>
+    <div class="text-center">
+      <img src="BFCNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+    <p>
+      Meanwhile, we built a Bayesian Convolutional Neural Network, which contains one Bayesian layer and six convolutional layers, each of which is followed by batch normalization and ReLu. There are thirteen features in the airfare dataset, so we set the number of neurons in the input layer to thirteen. The number of neurons in the hidden layer and output layer are 1024 and 1 respectively. We set the batch size to 128.
+    </p>
+    <div class="text-center">
+      <img src="BCNN.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Dataset</h4>
+    <p>
+      The dataset used in this paper is from Kaggle, which contains a total of 10,683 routes between these cities within India: New Delhi, Bangalore, Cochin, Kolkata, Hyderabad, and Delhi from March 2019 to June 2019, and from this data, each raw data contains 11 fields of information, as shown in the chart.
+    </p>
+    <div class="text-center">
+      <img src="data.png" class="mr-15 p-teaser mb-sm-5" style="width:100%;" />
+    </div>
+
+
+
+
+    <h4 class="mb-3 text-center text-sm-left">Experimental Results</h4>
+    <h4 class="mb-3 text-center text-sm-left">Comparison of different methods</h4>
+    <p>
+      This table shows the numerical results of mean squared error(RMSE), mean absolute error (MAE), mean absolute percentage error (MAPE), and coefficient of determination R2 among different methods. Specifically, we implement representative traditional machine learning methods (Lasso Regression, Ridge Regression, Support Vector Regression, K-Nearest Neighbors, XGBoost, Decision Tree, Random Forest) and deep neural networks (Transformer, Fully Connected Network, Bayesian Fully Connected Network, Convolutional Neural Network, Bayesian Convolutional Neural Network).    
+    </p>
+    <p>
+      Comparison of different methods on RMSE, MAE, MAPE, and R2. The best two results are highlighted in red and blue.
+    </p>
+    <div class="text-center"> 
+        <img src="table.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+    <p>
+      It can be observed that for traditional machine learning methods, Decision Tree, XGBoost, and Random Forest achieve significantly better performance than Lasso Regression, Ridge Regression, Support Vector Regression, and KNN. Besides, Random Forest achieves the best performance in all metrics among all traditional machine learning methods.
+    </p>
+    <p>
+      For the deep learning-based methods, the performance of Fully Connected Network, Bayesian FCN, Convolutional Neural Network, and Bayesian CNN achieve better performance than all traditional methods in RMSE and R2. We must highlight that with our proposed Bayesian layers, the performance of CNN and FCN can be both improved. Although Transformer is a recently popular method in various fields, the performance is the worst among all deep learning methods, which means it is not an ideal candidate for such an airfare prediction task. Besides, it should be noticed that Random Forest, as a traditional method, still achieves the best performance in MAE and MAPE among all the methods, which means the traditional machine learning methods is still playing an important role in our task.
+    </p>
+
+
+    <h4 class="mb-3 text-center text-sm-left">Ablation studies</h4>
+    <p>
+      In order to investigate how much each input feature can affect the final prediction effectively and efficiently, we do ablation studies by removing each input feature. We give the RMSE and MAE results of Random Forest and Convolutional Neural Networks.
+    </p>
+    <p>
+      From the data in the table below, we can see that after removing some features, the regression performance becomes better, such as "Route" and "Duration". However, for other features, the performance after deleting them is not as good as retaining all features. In this paper, we consider the case of retaining all features.    </p>
+    <div class="text-center">
+      <img src="Ablation.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+
+
+
+
+    <h4 class="mb-3 text-center text-sm-left">Running time comparisons</h4>
+    <p>
+      We also give comparisons of running time for different methods. Since the traditional methods and deep learning methods are run on CPU and GPU separately, we also give the results separately.    
+    </p>
+    <p>
+      This table shows the running times of different machine-learning methods. From the data in the table, we can see that the Decision Tree Regression Model runs the fastest, and the Random Forest Regression Model takes the longest time.
+    </p>
+    <div class="text-center">
+      <img src="runningtime.png" class="mr-15 p-teaser mb-sm-5" style="width: 45%;" />
+    </div>
+    <p>
+      This table shows the running time of different deep-learning methods. From the data in the table, we can see that the Fully Connected Network runs the fastest and has the least number of parameters; the Bayesian Convolutional Neural Network takes the longest time and has the largest number of parameters.
+    </p>
+    <div class="text-center">
+      <img src="time.png" class="mr-15 p-teaser mb-sm-5" style="width: 60%;" />
+    </div>
+  
+
+    <h4 class="mb-3 text-center text-sm-left">Conclusion</h4>
+    <p>
+      In this thesis, we did a systematic comparison of traditional machine learning methods (e.g., Ridge Regression, K-Nearest Neighbor, Random Forest) and deep learning methods (e.g., fully connected networks, convolutional neural networks) on the problem of airfare prediction. We proposed a Bayesian neural network for airfare prediction, which is the first method that utilizes Bayesian Inference for the airfare prediction task. We evaluate the performance of different methods on an open dataset of 10,683 domestic routes in India from March 2019 to June 2019. The experimental results show that deep learning-based methods achieve better results than traditional methods, while Bayesian neural networks can achieve better performance than other machine learning methods.
+    </p>
+    <p>
+      This thesis can be further extended for future work. First, the adopted public dataset only contains limited data, which hindered the performance of neural networks. It will be more worthwhile to collect a larger and wider dataset to explore the potential of deep neural networks. Second, it will be interesting to utilize the time-series information to make better predictions. Third, it is promising to design a special network to better capture useful features and information from the given data.    </p>
+
+
+    </main>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
