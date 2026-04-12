@@ -1,445 +1,662 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css">
+  <title>Xin Yao</title>
 
-     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-	  
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1168479-8"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-1168479-8');
-    </script>
-    <style>
-            a {
-                color: #FF6EC7;
-                text-decoration:none;
-            }
-            a:focus, a:hover {
-                color: #f09228;
-                text-decoration:none;
-            }
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-      html { scroll-behavior: smooth; }
-      body {
-        font-family: 'Raleway', Arial, Helvetica, sans-serif;
-        <!-- background-color: #333;
-        color: white-->} 
-      p {line-height: 26px;}
-      main.container {max-width: 960px;}
-      span.p-title {font-size: 16px;}
-      span.p-authors {font-style: normal;font-size: 16px;}
-      span.p-conference {font-style: italic;;font-size: 16px;}
-      .p-bibtex {font-size: 12px; margin-bottom: 0px; max-width: 650px; text-align: left;}
-      img.p-teaser {width: 200px;}
-      img.profile {
-        width: 130px; /* or your desired width */
-        height: 180px; /* or your desired height */
-        padding: 5px;
-        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);       
-      }
-      .profile {
-        width: 150px;
-        height: 250px;
-        border: 1px solid #ddd;
-        padding: 5px;
-        box-shadow: 0 -1px 5px 1px rgba(200, 200, 200, 0.5);
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --tag-bg: #eff6ff;
     }
 
-    h2 {
-        font-size: 36px; /* Increase the font size for your name */
-        margin-top: 0; /* Remove top margin to move it closer to the profile photo */
-        margin-bottom: 20px; /* Add margin at the bottom to space it from other elements */
+    html {
+      scroll-behavior: smooth;
     }
 
-    .about-me {
-        margin-top: 20px; /* Adjust the margin-top for the "About Me" section */
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
-    .project {
-      font-size: 30px; /* Adjust the margin-top for the "About Me" section */
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .site-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #f3f7ff 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 40px 32px;
+      margin-bottom: 48px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 0.9fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 16px;
+    }
+
+    .hero-text {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 680px;
       margin-bottom: 20px;
     }
-    .p-title {
-        font-weight: 600;
+
+    .hero-meta {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 20px;
     }
 
-    hr {
-        height: 1.5px; /* Adjust the height to make the line thicker */
-        background-color: #333; /* Set the background color of the line */
-        border: none; /* Remove the default border style */
-        margin: 20px 0; /* Add margin to the top and bottom of the line */
+    .profile-wrap {
+      text-align: center;
     }
-    </style>
 
+    .profile-img {
+      width: 220px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 6px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    }
 
-    <title>Xin Yao</title>
-  </head>
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
 
-  <body>
-    <main class="container">
-      <div class="mt-5 mb-5 text-center">
-        <img src="images/xin.jpg" alt="profile" class="profile mr-3 mb-sm-1 float-sm-left"/>
-        <div class="text-center text-sm-center">
-            <h2>Xin Yao</h2>
-			<p><strong>Building real-time AI, XR, and perception systems for healthcare, robotics, and intelligent environments.</strong></p>
-            M.Sc. in Computer Science<br>
-            Politecnico di Torino, Italy<br>
-	    	Authorized to work in Switzerland (B Permit)<br>
-            Currently living in Zurich, Switzerland<br>
-            <a target="_blank" href="https://www.linkedin.com/in/xinyaoai/">LinkedIn</a> /
-            <a target="_blank" href="mailto:xin.yao.ict@gmail.com">Email</a> /
-            <a target="_blank" href="https://github.com/xinyaoict">Github</a> /
-            <a target="_blank" href="https://scholar.google.de/citations?user=fxDG_Q4AAAAJ&hl=en&oi=ao">Google Scholar</a> /
-            <a target="_blank" href="files/CV_XinYao.pdf">CV</a>
-            <br>
-            </p>
+    .btn-custom {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+
+    .btn-custom:hover {
+      transform: translateY(-1px);
+      border-color: #cbd5e1;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+    }
+
+    .btn-primary-custom {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .btn-primary-custom:hover {
+      background: var(--accent-dark);
+      color: white;
+      border-color: var(--accent-dark);
+    }
+
+    .section {
+      margin-bottom: 52px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 800px;
+    }
+
+    .content-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+
+    .focus-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--tag-bg);
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid #dbeafe;
+    }
+
+    .mini-list p {
+      margin-bottom: 12px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      background: #e5e7eb;
+    }
+
+    .project-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .project-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .project-meta {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .project-desc {
+      font-size: 15px;
+      color: #374151;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--text);
+    }
+
+    .link-btn:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+
+    .timeline-item {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-role {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .timeline-meta {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .small-note {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 991px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-wrap {
+        order: -1;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 28px 20px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .section-title {
+        font-size: 24px;
+      }
+
+      .profile-img {
+        width: 180px;
+        height: 230px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="site-container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Xin Yao</h1>
+          <div class="hero-subtitle">Research Engineer in Computer Vision, XR, and Real-Time AI Systems</div>
+          <p class="hero-text">
+            I build applied systems at the intersection of computer vision, mixed reality, robotics, and healthcare, with a particular focus on human motion analysis and real-time intelligent systems.
+          </p>
+          <div class="hero-meta">
+            M.Sc. in Computer Science · Politecnico di Torino<br>
+            Swiss B Permit Holder · Based in Zurich, Switzerland
           </div>
+
+          <div class="button-group">
+            <a class="btn-custom btn-primary-custom" target="_blank" href="files/CV_XinYao.pdf">
+              <i class="fa fa-file-pdf-o"></i> CV
+            </a>
+            <a class="btn-custom" target="_blank" href="https://github.com/xinyaoict">
+              <i class="fa fa-github"></i> GitHub
+            </a>
+            <a class="btn-custom" target="_blank" href="https://www.linkedin.com/in/xinyaoai/">
+              <i class="fa fa-linkedin"></i> LinkedIn
+            </a>
+            <a class="btn-custom" target="_blank" href="https://scholar.google.de/citations?user=fxDG_Q4AAAAJ&hl=en&oi=ao">
+              <i class="fa fa-graduation-cap"></i> Scholar
+            </a>
+            <a class="btn-custom" target="_blank" href="mailto:xin.yao.ict@gmail.com">
+              <i class="fa fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+
+        <div class="profile-wrap">
+          <img src="images/xin.jpg" alt="Xin Yao profile photo" class="profile-img">
+        </div>
       </div>
+    </section>
 
+    <!-- About -->
+    <section class="section">
+      <h2 class="section-title">About Me</h2>
+      <div class="content-card">
+        <p>
+          I am a Research Engineer specializing in computer vision, XR (VR/AR/MR), and real-time AI systems, with a focus on healthcare and human motion analysis.
+        </p>
+        <p>
+          I hold a Master’s degree in Computer Science from
+          <a href="https://www.polito.it/en/education/master-s-degree-programmes/ict-for-smart-societies" target="_blank">Politecnico di Torino</a>,
+          where my thesis was published at IEEE COMPSAC 2023. My work focuses on building applied systems that combine machine learning, computer vision, and XR technologies for rehabilitation, robotics, and intelligent environments.
+        </p>
+        <p>
+          Previously, I worked as a Robotics Engineer at the Institute of Intelligent Equipment in Suzhou, developing robotic systems involving SLAM, perception, and human–robot interaction. I am currently open to opportunities in XR, computer vision, AI engineering, and related PhD positions in Switzerland and across Europe.
+        </p>
 
+        <div class="focus-tags">
+          <span class="tag">Computer Vision</span>
+          <span class="tag">XR / VR / AR / MR</span>
+          <span class="tag">Human Pose Estimation</span>
+          <span class="tag">Human Motion Analysis</span>
+          <span class="tag">Robotics Perception</span>
+          <span class="tag">Digital Health</span>
+          <span class="tag">Real-Time AI Systems</span>
+          <span class="tag">Unity / OpenXR</span>
+        </div>
+      </div>
+    </section>
 
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="content-card mini-list">
+        <p>
+          <strong>Master of Science, ICT for Smart Societies</strong><br>
+          Politecnico di Torino, Italy · Oct. 2019 – Oct. 2022
+        </p>
+        <p>
+          <strong>Bachelor of Science, Electronic Science and Technology</strong><br>
+          Southwest University, China · Oct. 2013 – Jun. 2017
+        </p>
+      </div>
+    </section>
 
+    <!-- Work Experience -->
+    <section class="section">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="content-card">
+        <div class="timeline-item">
+          <div class="timeline-role">Research Engineer</div>
+          <div class="timeline-meta">Lake Lucerne Institute, Switzerland · Oct. 2024 – Dec. 2025</div>
+          <div>Clinical software, human motion analysis, pose estimation, and rehabilitation-focused intelligent systems.</div>
+        </div>
 
-      <h4 class="project"> About Me</h4>
-      
-	<p class="about-me">
-	I am a Research Engineer specializing in computer vision, XR (VR/AR/MR), and real-time AI systems, with a focus on healthcare and human motion analysis.
-	
-	I hold a Master’s degree in Computer Science from Politecnico di Torino, where my thesis was published at IEEE COMPSAC 2023. My work focuses on building applied systems that combine machine learning, computer vision, and XR technologies for rehabilitation, robotics, and intelligent environments.
-	
-	Previously, I worked as a Robotics Engineer at the Institute of Intelligent Equipment in Suzhou, developing robotic systems involving SLAM, perception, and human–robot interaction. I am currently open to opportunities in XR, computer vision, AI engineering, and related PhD positions in Switzerland and across Europe.
-	</p>
+        <div class="timeline-item">
+          <div class="timeline-role">Software Engineer Intern</div>
+          <div class="timeline-meta">Syncroweb, Italy · Feb. 2023 – May. 2023</div>
+          <div>Android development, backend integration, and application testing.</div>
+        </div>
 
-	<h4 class="project"> Focus Areas</h4>
-	<p class="about-me">
-	Computer Vision · XR / VR / AR / MR · Human Pose Estimation · Human Motion Analysis · Real-Time AI Systems · Robotics Perception · Digital Health · Rehabilitation Technologies
-	</p>
+        <div class="timeline-item">
+          <div class="timeline-role">Robotics Engineer</div>
+          <div class="timeline-meta">Institute of Intelligent Equipment, Suzhou, China · Oct. 2017 – Sep. 2019</div>
+          <div>SLAM, robotic perception, human–robot interaction, and system deployment in real-world environments.</div>
+        </div>
+      </div>
+    </section>
 
-
-      <h4 class="project"> Education</h4>
-      
-      <p class="about-me">
-          Master of Science, ICT for Smart Societies, Politecnico di Torino, Italy, Oct. 2019-Oct. 2022<br>
-          Bachelor of Science, Electronic Science and Technology, Southwest University, China, Oct. 2013-Jun. 2017<br>
+    <!-- Featured Projects -->
+    <section class="section">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-intro">
+        Selected projects in mixed reality, computer vision, robotics, and applied AI.
       </p>
 
-      <h4 class="project"> Work Experience</h4>
-    
-	<p class="about-me"> 
-		Research Engineer, Lake Lucerne Institute, Switzerland, Oct. 2024- Dec. 2025<br> 
-		Software Engineer Intern, Syncroweb, Italy, Feb. 2023-May. 2023<br> 
-		Robotics Engineer, Institute of Intelligent Equipment, Suzhou, China, Oct. 2017-Sep. 2019 <br> 
-	</p>
+      <div class="project-grid">
 
-	
-
-      <h4 class="project">Research Projects</h4>
-
-      <ul class="list-unstyled">
-	
-
-        <li class="media" style="margin-bottom: 20px;">
-            <a href="https://drive.google.com/file/d/1WU8kt0iZ9_EHBkc5UdvKo0dTaROvEAyB/view?usp=drive_link">
-              <img src="images/bodytrack.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" />
-            </a>
-            <div class="text-left">
-              <span class="p-title">Full Body Tracking and Animation for Immersive Mixed Reality</span></br>
-              <span class="p-conference">Project Work, 2024</span></br>
-            <a class="mr-3" target="_blank" href="https://drive.google.com/file/d/1WU8kt0iZ9_EHBkc5UdvKo0dTaROvEAyB/view?usp=drive_link"><i class="fa fa-youtube"></i> Demo</a>
-              <div style="font-size: 14px; line-height: 1.5;">In this project, I tackled the challenge of full-body motion tracking in VR/AR applications to enhance immersion. Using VRIK and deep learning models, I implemented methods to estimate full body motion from sparse tracking signals. Additionally, I developed a real-time data recording and visualization framework in Unity for common human motions using a Meta Quest headset and two controllers. I also developed several VR games to demonstrate the enhanced immersive experience of designed methods. </div>
-      <!--        <a class="mr-3" target="_blank" href="https://github.com/xinyaoict/QuestTeleop"><i class="fa fa-file-code-o"></i> Code</a>  -->
-  
-          </div>
-        </li>
-	      
-
-        <li class="media" style="margin-bottom: 20px;">
-            <a href="projects/MUNet/index.html">
-              <img src="images/ntire.png" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-            </a>
-            <div class="text-left">
-              <span class="p-title">MUNet for Blind Compressed Image Enhancement</span></br>
-              <span class="p-conference">NTIRE Blind Compressed Image Enhancement Challenge, CVPR 2024</span></br>
-              <a class="mr-3" target="_blank" href="https://github.com/xinyaoict/MUNet"><i class="fa fa-file-code-o"></i> Code</a>
-              <div style="font-size: 14px; line-height: 1.5;">In this project, I developed MUNet, a network to enhance compressed image quality. It outperformed previous methods by 0.26 dB on PSNR. I co-authored the final report for NTIRE challenges in CVPR 2024.
-          </div>
-        </li>	      
-	      
-
-
-        <li class="media" style="margin-bottom: 20px;">
-            <a href="projects/RebarCounting/index.html">
-              <img src="images/rebar.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-            </a>
-            <div class="text-left">
-              <span class="p-title">YOLOv9 for Dense Object Detection and Counting</span></br>
-              <span class="p-conference">Project Work, 2024</span></br>
-              <a class="mr-3" target="_blank" href="projects/RebarCounting/index.html"><i class="fa fa-gear"></i> Project Page </a>
-              <a class="mr-3" target="_blank" href="https://github.com/xinyaoict/RebarCounter-YOLOV9/tree/main"><i class="fa fa-file-code-o"></i> Code</a>
-              <div style="ffont-size: 14px; line-height: 1.5;">
-In this project, I tackled the challenge of detecting and counting dense objects, which is difficult due to their small size and large numbers in a single image. Using YOLOv9, I implemented a method for dense object detection and counting on a rebar dataset from real production environments. This achieved a state-of-the-art accuracy of 98%. I also open-sourced the code with a well-documented report.</div>
+        <article class="project-card">
+          <img src="images/bodytrack.jpg" alt="Full body tracking project" class="project-image">
+          <div class="project-body">
+            <div class="project-title">Full Body Tracking and Animation for Immersive Mixed Reality</div>
+            <div class="project-meta">Project Work · 2024</div>
+            <div class="project-desc">
+              Developed full-body motion reconstruction methods for VR/AR using sparse XR tracking signals, Unity, and learning-based pose estimation, with real-time recording and visualization on Meta Quest.
             </div>
-        </li>
-
-	      
-        <li class="media" style="margin-bottom: 20px;">
-            <a href="projects/QuestTeleop/index.html">
-              <img src="images/teleope.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" />
-            </a>
-            <div class="text-left">
-              <span class="p-title">QuestTeleop: Robotic Teleoperation using a Meta Quest Headset</span></br>
-              <span class="p-conference">Project Work, 2023</span></br>
-      <!--        <a class="mr-3" target="_blank" href="https://github.com/xinyaoict/QuestTeleop"><i class="fa fa-file-code-o"></i> Code</a>  -->
-            <div style="ffont-size: 14px; line-height: 1.5;">
-              In this project, we aim to revolutionize teleoperation in high-risk environments. Using VR headsets, our system offers users a highly responsive and intuitive interface for controlling robotic appendages in real-time. Hand pose is captured using Unity, and the robot arm's joint angles are solved using Bio IK. Users can teleoperate the robotic system using only a Meta Quest headset.</div>
-          </div>
-        </li>
-
-	      
-	      
-        <li class="media" style="margin-bottom: 20px;">
-            <a href="projects/slam-unity-ros/index.html">
-              <img src="images/slam-unity-ros.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" />
-            </a>
-            <div class="text-left">
-              <span class="p-title">SLAM in Virtual Reality using Unity and ROS</span></br>
-              <span class="p-conference">Project Work, 2023</span></br>
-         <!--      <a class="mr-3" target="_blank" href="https://github.com/xinyaoict/SLAM_VR"><i class="fa fa-file-code-o"></i> Code</a>  -->
-         <div style="font-size: 14px; line-height: 1.5;">In this project, I created a framework for SLAM in VR games, enhancing user engagement and aiding developers in refining navigation algorithms. Users explore an old seaport in a robot car in Unity, with the robot's perspective transmitted to ROS2 for SLAM.</div>
-          </div>
-        </li>
-
-
-        <li class="media" style="margin-bottom: 20px;">
-            <a href="projects/SAR_ROS/index.html">
-              <img src="images/summit-xl.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-            </a>
-            <div class="text-left">
-              <span class="p-title">Robotic Search and Rescue with a Simulated Ground Robot</span></br>
-              <span class="p-conference">Project Work, 2023</span></br>
-              <a class="mr-3" target="_blank" href="https://github.com/xinyaoict/SAR_ROS/tree/main"><i class="fa fa-file-code-o"></i> Code</a>
-              <div style="font-size: 14px; line-height: 1.5;">Developed a ROS/Gazebo-based robotic search-and-rescue simulation using the Summit XL mobile robot. Built a local simulation workflow integrating teleoperation, SLAM with GMapping, Gazebo environment customization, and YOLO-based real-time object/person detection. Recorded and analyzed ROS bag data in Python for robot motion and sensor evaluation.
-          </div>
-        </li>
-		  
-	      
-
-
-	      
-        <li class="media" style="margin-bottom: 20px;">
-          <a href="projects/Thesis/index.html">
-              <img src="images/airfare.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-          </a>
-          <div class="media-body">
-              <span class="p-title">Machine Learning Methodologies for Airfare Prediction</span><br>
-              <span class="p-conference">Master Thesis, Politecnico di Torino, 2022</span><br>
-              <span class="p-conference">2023 IEEE International Conference on Computers, Software, and Applications</span><br>
-              <a style="color:rgb(255, 30, 30);">Publication</a> <br>
-              <a class="mr-3" target="_blank" href="projects/Thesis/index.html"><i class="fa fa-gear"></i> Project Page </a>
-              <a class="mr-3" target="_blank" href="files/XinYao_MasterThesis.pdf"><i class="fa fa-file-pdf-o"></i> Thesis</a>
-              <a class="mr-3" target="_blank" href="files/paper.pdf"><i class="fa fa-file-pdf-o"></i> Paper</a> <br>
-              <div style="font-size: 14px; line-height: 1.5;">In this thesis, we compared traditional and deep learning methods for airfare prediction. Our Bayesian neural network, utilizing Bayesian Inference, outperformed traditional methods on a dataset of 10,683 domestic routes in India from March to June 2019. Future work includes expanding the dataset and integrating time-series information for better predictions.</div>
+            <div class="project-tags">
+              <span class="tag">Unity</span>
+              <span class="tag">Meta Quest</span>
+              <span class="tag">XR</span>
+              <span class="tag">Pose Estimation</span>
             </div>
-      </li>
-      
+            <div class="project-links">
+              <a class="link-btn" target="_blank" href="https://drive.google.com/file/d/1WU8kt0iZ9_EHBkc5UdvKo0dTaROvEAyB/view?usp=drive_link">
+                <i class="fa fa-youtube-play"></i> Demo
+              </a>
+            </div>
+          </div>
+        </article>
 
-	      
-	    	      
-      <li class="media" style="margin-bottom: 20px;">
-        <a href="projects/COVID-19/index.html">
-            <img src="images/Covid19.png" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-        </a>
-        <div class="media-body">
-            <span class="p-title">Modeling Propagation with Agent-Based Models (ABM) for COVID-19 Diffusion</span><br>
-            <span class="p-conference">Project Work, Politecnico di Torino, 2021</span><br>
-            <a class="mr-3" target="_blank" href="projects/COVID-19/index.html"><i class="fa fa-gear"></i> Project Page </a><br>
-            <div style="font-size: 14px; line-height: 1.5;">In this project, we trained a model with past epidemic data, adjusting parameters for early-stage pandemic conditions. Then, we predicted future pandemic trends and assess policy impacts. Our results demonstrate the model's value for pandemic prediction.</div>
-        </div>
-    </li>
-    
+        <article class="project-card">
+          <img src="images/ntire.png" alt="MUNet project" class="project-image">
+          <div class="project-body">
+            <div class="project-title">MUNet for Blind Compressed Image Enhancement</div>
+            <div class="project-meta">NTIRE Challenge, CVPR 2024</div>
+            <div class="project-desc">
+              Developed a residual UNet-based model for compressed image enhancement, improving PSNR and contributing to the NTIRE CVPR 2024 challenge report.
+            </div>
+            <div class="project-tags">
+              <span class="tag">PyTorch</span>
+              <span class="tag">Image Restoration</span>
+              <span class="tag">Deep Learning</span>
+            </div>
+            <div class="project-links">
+              <a class="link-btn" target="_blank" href="https://github.com/xinyaoict/MUNet">
+                <i class="fa fa-file-code-o"></i> Code
+              </a>
+              <a class="link-btn" target="_blank" href="projects/MUNet/index.html">
+                <i class="fa fa-external-link"></i> Project
+              </a>
+            </div>
+          </div>
+        </article>
 
+        <article class="project-card">
+          <img src="images/rebar.jpg" alt="Rebar counting project" class="project-image">
+          <div class="project-body">
+            <div class="project-title">YOLOv9 for Dense Object Detection and Counting</div>
+            <div class="project-meta">Project Work · 2024</div>
+            <div class="project-desc">
+              Built a dense-object detection and counting pipeline for industrial scenarios using YOLOv9 on real production data, achieving 98% accuracy.
+            </div>
+            <div class="project-tags">
+              <span class="tag">YOLOv9</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Industrial AI</span>
+            </div>
+            <div class="project-links">
+              <a class="link-btn" target="_blank" href="projects/RebarCounting/index.html">
+                <i class="fa fa-external-link"></i> Project
+              </a>
+              <a class="link-btn" target="_blank" href="https://github.com/xinyaoict/RebarCounter-YOLOV9/tree/main">
+                <i class="fa fa-file-code-o"></i> Code
+              </a>
+            </div>
+          </div>
+        </article>
 
+        <article class="project-card">
+          <img src="images/teleope.jpg" alt="Quest teleoperation project" class="project-image">
+          <div class="project-body">
+            <div class="project-title">QuestTeleop: Robotic Teleoperation using a Meta Quest Headset</div>
+            <div class="project-meta">Project Work · 2023</div>
+            <div class="project-desc">
+              Developed an immersive teleoperation system for robotic manipulators using Unity, Meta Quest, hand pose capture, and inverse kinematics.
+            </div>
+            <div class="project-tags">
+              <span class="tag">Meta Quest</span>
+              <span class="tag">Teleoperation</span>
+              <span class="tag">BioIK</span>
+              <span class="tag">Robotics</span>
+            </div>
+            <div class="project-links">
+              <a class="link-btn" target="_blank" href="projects/QuestTeleop/index.html">
+                <i class="fa fa-external-link"></i> Project
+              </a>
+            </div>
+          </div>
+        </article>
 
-      <li class="media" style="margin-bottom: 20px;">
-        <a href="projects/ARIMAModelsforCarSharingPrediction/index.html">
-          <img src="images/Car2Go.jpg" class="mr-4 p-teaser float-sm-left mb-1" style="width: 200px; height: 120px;" />
-        </a>
-        <div class="media-body">
-            <span class="p-title">ARIMA Models for Car Sharing Prediction</span><br>
-            <span class="p-conference">Project Work, Politecnico di Torino, 2021</span><br>
-            <a class="mr-3" target="_blank" href="projects/ARIMAModelsforCarSharingPrediction/index.html"><i class="fa fa-gear"></i> Project Page </a><br>
-            <div style="font-size: 14px; line-height: 1.5;">This project uses ARIMA models to predict car rental data in Milano and Munich for car2go, and Milano for enjoy in October 2017. Missing data is cleaned by replacing it with the mean of the same time bin. Munich's car2go data shows the smallest MSE, indicating good consistency. Residuals across all cities resemble a uniform distribution, suggesting model effectiveness.</div>
-        </div>
-    </li>
-    
-    
+        <article class="project-card">
+          <img src="images/summit-xl.jpg" alt="Search and rescue robot project" class="project-image">
+          <div class="project-body">
+            <div class="project-title">Robotic Search and Rescue with a Simulated Ground Robot</div>
+            <div class="project-meta">Project Work · 2023</div>
+            <div class="project-desc">
+              Developed a ROS/Gazebo-based search-and-rescue simulation integrating teleoperation, SLAM, Gazebo environment customization, YOLO-based detection, and rosbag analysis.
+            </div>
+            <div class="project-tags">
+              <span class="tag">ROS</span>
+              <span class="tag">Gazebo</span>
+              <span class="tag">SLAM</span>
+              <span class="tag">YOLO</span>
+            </div>
+            <div class="project-links">
+              <a class="link-btn" target="_blank" href="https://github.com/xinyaoict/SAR_ROS/tree/main">
+                <i class="fa fa-file-code-o"></i> Code
+              </a>
+              <a class="link-btn" target="_blank" href="projects/SAR_ROS/index.html">
+                <i class="fa fa-external-link"></i> Project
+              </a>
+            </div>
+          </div>
+        </article>
 
-      <li class="media" style="margin-bottom: 20px;">
-            <a href="projects/BuildingAnalysisAndPrediction/index.html">
-                <img src="images/SamrtBuilding.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-            </a>
-            <div class="media-body">
-                <span class="p-title">Forecast of Home Energy Consumption</span><br>
-                <span class="p-conference">Project Work, Politecnico di Torino, 2021</span><br>
-                <a class="mr-3" target="_blank" href="projects/BuildingAnalysisAndPrediction/index.html"><i class="fa fa-gear"></i> Project Page </a><br>
-                <div style="font-size: 14px; line-height: 1.5;">In this project, we focused on a residential building in Rome and studied the effect of HVAC parameters. Due to climate change throughout the year, we also modified the settings or schedules of heating, cooling, and ventilation. In the end, we proposed the implementation of a series of models for the forecast of home energy consumption (LSTM, Regression neural network, Hidden Markov model, and Prophet).</div>
-        </div>
-    </li>
+        <article class="project-card">
+          <img src="images/airfare.jpg" alt="Airfare prediction thesis" class="project-image">
+          <div class="project-body">
+            <div class="project-title">Machine Learning Methodologies for Airfare Prediction</div>
+            <div class="project-meta">Master Thesis · 2022 · IEEE COMPSAC 2023</div>
+            <div class="project-desc">
+              Compared traditional and deep learning methods for airfare prediction and proposed a Bayesian neural network framework published at IEEE COMPSAC 2023.
+            </div>
+            <div class="project-tags">
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Bayesian Models</span>
+              <span class="tag">Publication</span>
+            </div>
+            <div class="project-links">
+              <a class="link-btn" target="_blank" href="projects/Thesis/index.html">
+                <i class="fa fa-external-link"></i> Project
+              </a>
+              <a class="link-btn" target="_blank" href="files/paper.pdf">
+                <i class="fa fa-file-pdf-o"></i> Paper
+              </a>
+              <a class="link-btn" target="_blank" href="files/XinYao_MasterThesis.pdf">
+                <i class="fa fa-file-pdf-o"></i> Thesis
+              </a>
+            </div>
+          </div>
+        </article>
 
-
-
-
-      <li class="media" style="margin-bottom: 20px;">
-          <a href="projects/SmartGas/index.html">
-              <img src="images/SmartValve.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-          </a>
-          <div class="media-body">
-              <span class="p-title">A Smart Gas Valve for Safe Home</span><br>
-              <span class="p-conference">Project Work, Politecnico di Torino, 2020</span><br>
-              <a class="mr-3" target="_blank" href="projects/SmartGas/index.html"><i class="fa fa-gear"></i> Project Page </a><br>
-              <div style="font-size: 14px; line-height: 1.5;">The proposed IoT platform enhances home safety by monitoring gas valves and detecting boiling food. It offers warning strategies to minimize energy waste and responds to temperature sensor alerts. The platform integrates seamlessly into Safe and Smart Home environments, enabling Demand/Response policies and providing energy-aware messages via email or WhatsApp.</div>
-        </div>
-    </li>
-
-
-      
-	      
-
-      <li class="media" style="margin-bottom: 20px;">
-        <a href="projects/Parkinson/index.html">
-          <img src="images/Parkinson.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-        </a>        
-        <div class="media-body">
-            <span class="p-title">Regression on Parkinsons Telemonitoring Dataset</span><br>
-            <span class="p-conference">Project Work, Politecnico di Torino, 2020</span><br>
-            <a class="mr-3" target="_blank" href="projects/Parkinson/index.html"><i class="fa fa-gear"></i> Project Page </a><br>
-            <div style="font-size: 14px; line-height: 1.5;">In this project, we predict total UPDRS scores for Parkinson’s disease using methods like Linear Least-Squares Regression, Ridge Regression, Adam Optimizer, and Conjugate Gradient Descent. We compare their performance to identify the most effective approach for understanding the disease.</div>
-        </div>
-    </li>
-    
-          
-
-      <li class="media" style="margin-bottom: 20px;">
-          <a href="projects/Moles/index.html">
-            <img src="images/Melanoma.png" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-          </a>
-          <div class="media-body">
-            <span class="p-title">MoleSymmetry: Enhancing Melanoma Diagnosis with Advanced Border and Asymmetry Algorithms</span><br>
-            <span class="p-conference">Project Work, Politecnico di Torino, 2020</span><br>
-            <a class="mr-3" target="_blank" href="projects/Moles/index.html"><i class="fa fa-gear"></i> Project Page </a><br>
-            <div style="font-size: 14px; line-height: 1.5;"></div>
-            <span style="font-size: smaller;">In this project, we developed a Melanoma Diagnosis Algorithm that extracts borders and assesses asymmetry. Through experimental validation on a mole dataset, we demonstrated its effectiveness in diagnosis.</span>
-        </div>
-    </li>
-     
-	      
-
-    <li class="media" style="margin-bottom: 20px;">
-        <a href="projects/ECG/index.html">
-          <img src="images/ECG2.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-        </a>
-        <div class="media-body">
-          <span class="p-title">Analysis of Arrhythmia Classification on ECG Dataset</span><br>
-          <span class="p-conference">Project Work, Politecnico di Torino, 2019</span><br>
-          <a class="mr-3" target="_blank" href="projects/ECG/index.html"><i class="fa fa-gear"></i> Project Page </a><br>
-          <div style="font-size: 14px; line-height: 1.5;">In this project, we use classification methods to analyze arrhythmia data, aiming to improve identification of cardiac arrhythmias. By leveraging machine learning algorithms like decision trees, support vector machines, and neural networks, we aim to create accurate systems for arrhythmia classification, offering insights for diagnosis and treatment.</div>
       </div>
-    </li>
- 
+    </section>
 
-
-    <li class="media" style="margin-bottom: 20px;">
-        <a href="projects/CropDrying/index.html">
-          <img src="images/crop.jpg" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
+    <!-- Publication -->
+    <section class="section">
+      <h2 class="section-title">Selected Publication</h2>
+      <div class="content-card">
+        <p>
+          <strong>Comparative Analysis of Neural Networks Techniques to Forecast Airfare Prices</strong><br>
+          IEEE International Conference on Computers, Software, and Applications (COMPSAC), 2023
+        </p>
+        <a class="link-btn" target="_blank" href="files/paper.pdf">
+          <i class="fa fa-file-pdf-o"></i> Read Paper
         </a>
-        <div class="media-body">
-          <span class="p-title">A Method of Small Particle Crop Drying Control</span><br>
-          <span class="p-conference">Bachelor Thesis, Southwest University, 2017</span><br>
-          <span class="p-conference">Chinese University Student Innovation and Entrepreneurship Project</span><br>
-          <a style="color:rgb(255, 30, 30);">Patent</a><br>
-          <a class="mr-3" target="_blank" href="projects/CropDrying/index.html"><i class="fa fa-gear"></i> Project Page </a>
-          <a class="mr-3" target="_blank" href="https://patents.google.com/patent/CN105605906A/en"><i class="fa fa-file-pdf-o"></i> Patent</a><br>
-          <div style="font-size: 14px; line-height: 1.5;">In this project, a small grain crop drying control system is developed using STM32F103RBT6. It optimizes drying parameters such as temperature and time for different crops, ensuring efficient and high-quality drying while minimizing energy consumption.</div>
       </div>
-    </li>
+    </section>
 
+    <!-- Awards -->
+    <section class="section">
+      <h2 class="section-title">Awards</h2>
+      <div class="content-card">
+        <p><strong>Scholarships</strong></p>
+        <p class="small-note">
+          University Scholarship · 2014<br>
+          National Inspirational Scholarship · 2015<br>
+          National Scholarship · 2016
+        </p>
 
-
-    <li class="media" style="margin-bottom: 20px;">
-        <a href="projects/SprayingDevice/index.html">
-          <img src="images/Spraying.png" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-        </a>
-        <div class="media-body">
-          <span class="p-title">The Design of a Small Intelligent Spraying Device for Wall Surface</span><br>
-          <a style="color:rgb(255, 30, 30);">Patent</a><br>
-          <a class="mr-3" target="_blank" href="projects/SprayingDevice/index.html"><i class="fa fa-gear"></i> Project Page </a>
-          <a class="mr-3" target="_blank" href="files/Utility.jpg"><i class="fa fa-file-pdf-o"></i> Certificate</a>
-          <a class="mr-3" target="_blank" href="https://patents.google.com/patent/CN204562022U/en"><i class="fa fa-file-pdf-o"></i> Patent</a><br>
-          <div style="font-size: 14px; line-height: 1.5;">In this project, we introduce new wall-spraying equipment with double suction cups, overcoming limitations of traditional methods. Controlled by the MC9SXS128, it offers safe, efficient spraying with Bluetooth control. The system is innovative, lightweight, and cost-effective.</div>
+        <p><strong>Technology Innovation</strong></p>
+        <p class="small-note">
+          Grand Prize, The Second Mobile Robot Contest · 2015<br>
+          National Undergraduate Innovation and Entrepreneurship Training Program · 2015<br>
+          Meritorious Winner, International Contest in Modeling (ICM) · 2016<br>
+          Second Prize at Southwest University, Research on a Serpentine Robot Device · 2016
+        </p>
       </div>
-    </li>
+    </section>
 
-
-
-
-
-    <li class="media" style="margin-bottom: 20px;">
-        <a href="projects/ICM/index.html">
-          <img src="images/ICM.png" class="mr-4 p-teaser float-sm-left mb-sm-1" style="width: 200px; height: 120px;" />
-        </a>
-        <div class="media-body">
-          <span class="p-title">Solutions to Water Scarcity based on Machine Learning</span><br>
-          <span class="p-conference">2016 International Mathematical Contest in Modeling (ICM)<br>    
-            <a style="color:rgb(255, 30, 30);">Meritorious Winner</a>            
-          </span><br>
-          <a class="mr-3" target="_blank" href="projects/ICM/index.html"><i class="fa fa-gear"></i> Project Page </a>
-          <a class="mr-3" target="_blank" href="files/ICM-52989.pdf"><i class="fa fa-file-pdf-o"></i> Paper</a>
-          <a class="mr-3" target="_blank" href="files/52989 ICM.pdf"><i class="fa fa-file-pdf-o"></i> Certificate</a><br>
-          <div style="font-size: 14px; line-height: 1.5;">In this project, we address water scarcity in North China using population forecasting, neural networks, and regression analysis. We establish water demand and supply models, identifying a gap of 35.8 billion cubic meters. Proposed interventions include building reservoirs and water transfer projects. We also analyze pollution and sewage disposal, discussing the plan's impacts on the ecosystem.</div>
-      </div>
-    </li>
-
-
-
-
-      </ul>
-
-      <h4 class="project"> Awards</h4>
-      
-      <p class="about-me">
-        <strong>Scholarships</strong><br>
-          University Scholarship, Jun. 2014<br>
-          National Inspirational Scholarship, Jun. 2015<br>
-          National Scholarship, Jun. 2016<br>
-          <strong>Technology Innovation</strong><br>
-          Grand Prize, The Second Mobile Robot Contest, Science and Technology Committee, May. 2015<br>
-          Successful Entry Prize, Chongqing Board of Education,  Jun. 2015<br>
-          National Undergraduate Innovation and Entrepreneurship Training Program, Dec. 2015<br>
-          Meritorious Winner,  International Interdisciplinary Contest In Modeling (ICM), Feb. 2016<br>  
-          Second Prize at Southwest University, Research on a Serpentine Robot Device, Jul. 2016<br>
-
-
-
-      </p>
-
-    </main>
-
-	<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=4zSjajbb3_Ic7lmO_NtdPgAowE3L4QJZqk6GfdWOQAI&cl=ffffff&w=0"></script>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+    <div class="footer-note">
+      © Xin Yao · Built for research, engineering, and collaboration opportunities
+    </div>
+  </main>
+</body>
 </html>
